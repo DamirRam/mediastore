@@ -1,0 +1,189 @@
+/* настройки шрифтов */
+@font-face {
+    font-family: 'OpenSans';
+    src: url('../fonts/OpenSans.eot');
+    src: url('../fonts/OpenSans.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/OpenSans.woff2') format('woff2'),
+        url('../fonts/OpenSans.woff') format('woff'),
+        url('../fonts/OpenSans.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'RobotoSlab';
+    src: url('../fonts/RobotoSlab-Regular.eot');
+    src: url('../fonts/RobotoSlab-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/RobotoSlab-Regular.woff2') format('woff2'),
+        url('../fonts/RobotoSlab-Regular.woff') format('woff'),
+        url('../fonts/RobotoSlab-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'OpenSans-bold';
+    src: url('../fonts/OpenSans-Bold.eot');
+    src: url('../fonts/OpenSans-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/OpenSans-Bold.woff2') format('woff2'),
+        url('../fonts/OpenSans-Bold.woff') format('woff'),
+        url('../fonts/OpenSans-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+.regular(@regular: 300){
+    font-family: "OpenSans", sans-serif;
+    font-weight: @regular;
+}
+.bold(@bold: 700){
+    font-family: "OpenSans-bold", sans-serif;
+    font-weight: @bold;
+}
+.roboto(){
+    font-family: "RobotoSlab", sans-serif;
+}
+
+/* настройки цветов */
+/* текст */
+@text-light: #ffffff;
+@text-dark: #000000;
+@text-logo: #e8aa31;
+/* фоновые цвета */
+@bg-call-btn: #5886f5;/* #626c75 */
+@bg-order-btn: #5886f5;
+@bg-dark: #000000;
+
+/* базовые настройки */
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 10px;
+}
+body {
+  .regular;
+}
+a, button, input, textarea, select {
+  outline: none;
+  text-decoration: none;
+  &:focus {
+    outline: none;
+  }
+}
+a:hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+/* контейнер для контента */
+.container {
+  max-width: 1170px;
+  margin: 0px auto;
+}
+@media(max-width: 1200px) {
+  .container {
+    max-width: 970px;
+  }
+}
+@media(max-width: 992px) {
+  html{
+    font-size: 8px;
+  }
+  .container {
+    max-width: 750px;
+  }
+}
+@media(max-width: 768px) {
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+/* кнопки */
+.button {
+  padding: 1.5rem 3rem;
+  font-size: 1.6rem;
+  color: @text-light;
+  background-color: @bg-order-btn;
+  border-radius: 2px;
+  border-width: 0px;
+  &:hover{
+    background-color: darken(@bg-order-btn, 5%);
+  }
+}
+
+/* header */
+.header {
+  font-size: 1.6rem;
+  background-color: @bg-dark;
+  color: @text-light;
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 65px;
+  }
+  &__title{
+    font-weight: normal;
+  }
+  &__phone{
+    color: @text-light;
+    &:hover{
+      color: darken(@text-light, 10%);
+    }
+  }
+  &__button {
+    padding: 1rem 1.5rem;
+    color: @text-light;
+    background-color: @bg-call-btn;
+    border-radius: 2px;
+    border: none;
+    &:hover{
+      background-color: darken(@bg-call-btn, 5%);
+    }
+  }
+}
+.logo {
+  .roboto;
+  &__title {
+    font-size: 2.7rem;
+    text-transform: uppercase;
+    color: @text-logo;
+  }
+  &__word {
+    color: @text-light;
+  }
+}
+
+/* main section */
+.main {
+  padding-top: 10rem;
+  height: 600px;
+  background: url(../img/bg-main.jpg) center no-repeat;
+  background-size: cover;
+  &__wrap {
+    padding: 4rem;
+    max-width: 450px;
+    background-color: rgba(255, 255, 255, 0.85);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);;
+  }
+  &__title {
+    font-size: 3.4rem;
+    font-weight: normal;
+  }
+  &__word {
+    .bold;
+  }
+  &__subtitle {
+    margin-top: 4rem;
+    font-size: 1.6rem;
+    font-weight: normal;
+    line-height: 1.5;
+  }
+  &__button {
+    margin-top: 4rem;
+  }
+}
+

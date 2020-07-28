@@ -1,0 +1,175 @@
+/* настройки шрифтов */
+@font-face {
+  font-family: 'OpenSans';
+  src: url('../fonts/OpenSans.eot');
+  src: url('../fonts/OpenSans.eot?#iefix') format('embedded-opentype'), url('../fonts/OpenSans.woff2') format('woff2'), url('../fonts/OpenSans.woff') format('woff'), url('../fonts/OpenSans.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'RobotoSlab';
+  src: url('../fonts/RobotoSlab-Regular.eot');
+  src: url('../fonts/RobotoSlab-Regular.eot?#iefix') format('embedded-opentype'), url('../fonts/RobotoSlab-Regular.woff2') format('woff2'), url('../fonts/RobotoSlab-Regular.woff') format('woff'), url('../fonts/RobotoSlab-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'OpenSans-bold';
+  src: url('../fonts/OpenSans-Bold.eot');
+  src: url('../fonts/OpenSans-Bold.eot?#iefix') format('embedded-opentype'), url('../fonts/OpenSans-Bold.woff2') format('woff2'), url('../fonts/OpenSans-Bold.woff') format('woff'), url('../fonts/OpenSans-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+/* настройки цветов */
+/* текст */
+/* фоновые цвета */
+/* #626c75 */
+/* базовые настройки */
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+html {
+  font-size: 10px;
+}
+body {
+  font-family: "OpenSans", sans-serif;
+  font-weight: 300;
+}
+a,
+button,
+input,
+textarea,
+select {
+  outline: none;
+  text-decoration: none;
+}
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+a:hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+/* контейнер для контента */
+.container {
+  max-width: 1170px;
+  margin: 0px auto;
+}
+@media (max-width: 1200px) {
+  .container {
+    max-width: 970px;
+  }
+}
+@media (max-width: 992px) {
+  html {
+    font-size: 8px;
+  }
+  .container {
+    max-width: 750px;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+/* кнопки */
+.button {
+  padding: 1.5rem 3rem;
+  font-size: 1.6rem;
+  color: #ffffff;
+  background-color: #5886f5;
+  border-radius: 2px;
+  border-width: 0px;
+}
+.button:hover {
+  background-color: #4075f4;
+}
+/* header */
+.header {
+  font-size: 1.6rem;
+  background-color: #000000;
+  color: #ffffff;
+}
+.header__wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 65px;
+}
+.header__title {
+  font-weight: normal;
+}
+.header__phone {
+  color: #ffffff;
+}
+.header__phone:hover {
+  color: #e6e6e6;
+}
+.header__button {
+  padding: 1rem 1.5rem;
+  color: #ffffff;
+  background-color: #5886f5;
+  border-radius: 2px;
+  border: none;
+}
+.header__button:hover {
+  background-color: #4075f4;
+}
+.logo {
+  font-family: "RobotoSlab", sans-serif;
+}
+.logo__title {
+  font-size: 2.7rem;
+  text-transform: uppercase;
+  color: #e8aa31;
+}
+.logo__word {
+  color: #ffffff;
+}
+/* main section */
+.main {
+  padding-top: 10rem;
+  height: 600px;
+  background: url(../img/bg-main.jpg) center no-repeat;
+  background-size: cover;
+}
+.main__wrap {
+  padding: 4rem;
+  max-width: 450px;
+  background-color: rgba(255, 255, 255, 0.85);
+  -webkit-box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+.main__title {
+  font-size: 3.4rem;
+  font-weight: normal;
+}
+.main__word {
+  font-family: "OpenSans-bold", sans-serif;
+  font-weight: 700;
+}
+.main__subtitle {
+  margin-top: 4rem;
+  font-size: 1.6rem;
+  font-weight: normal;
+  line-height: 1.5;
+}
+.main__button {
+  margin-top: 4rem;
+}
