@@ -60,13 +60,8 @@ a:hover {
 }
 /* контейнер для контента */
 .container {
-  max-width: 1170px;
+  max-width: 1000px;
   margin: 0px auto;
-}
-@media (max-width: 1200px) {
-  .container {
-    max-width: 970px;
-  }
 }
 @media (max-width: 992px) {
   html {
@@ -82,6 +77,9 @@ a:hover {
     padding-right: 10px;
   }
 }
+.section {
+  padding: 10rem 0px;
+}
 /* кнопки */
 .button {
   padding: 1.5rem 3rem;
@@ -93,6 +91,10 @@ a:hover {
 }
 .button:hover {
   background-color: #4075f4;
+}
+/* заголовки */
+.title {
+  font-size: 2.8rem;
 }
 /* header */
 .header {
@@ -163,13 +165,13 @@ a:hover {
   font-weight: 700;
 }
 .main__subtitle {
-  margin-top: 4rem;
+  margin-top: 3rem;
   font-size: 1.6rem;
   font-weight: normal;
   line-height: 1.5;
 }
 .main__button {
-  margin-top: 4rem;
+  margin-top: 3rem;
 }
 @media (max-width: 992px) {
   .main__wrap {
@@ -213,4 +215,44 @@ a:hover {
     margin-left: auto;
     width: 155px;
   }
+}
+/* наши преимущества */
+.features__title {
+  font-weight: normal;
+}
+.features__wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 5rem;
+}
+.features__text {
+  display: inline-block;
+  margin-top: 3rem;
+  font-size: 1.4rem;
+  line-height: 21px;
+  color: #707070;
+}
+.feature {
+  text-align: center;
+}
+.feature__img-bg {
+  position: relative;
+  width: 220px;
+  height: 140px;
+  text-align: center;
+  background-color: #5686ae;
+}
+.feature__img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }

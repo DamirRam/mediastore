@@ -51,10 +51,12 @@
 @text-light: #ffffff;
 @text-dark: #000000;
 @text-logo: #e8aa31;
+@text-features: #707070;
 /* фоновые цвета */
 @bg-call-btn: #5886f5;/* #626c75 */
 @bg-order-btn: #5886f5;
 @bg-dark: #000000;
+@bg-features: #5686ae;
 
 /* базовые настройки */
 * {
@@ -78,15 +80,10 @@ a:hover {
   cursor: pointer;
 }
 /* контейнер для контента */
-.container {
-  max-width: 1170px;
-  margin: 0px auto;
-}
-@media(max-width: 1200px) {
   .container {
-    max-width: 970px;
+    max-width: 1000px;
+    margin: 0px auto;
   }
-}
 @media(max-width: 992px) {
   html{
     font-size: 8px;
@@ -101,6 +98,9 @@ a:hover {
     padding-right: 10px;
   }
 }
+.section{
+  padding: 10rem 0px;
+}
 /* кнопки */
 .button {
   padding: 1.5rem 3rem;
@@ -112,6 +112,10 @@ a:hover {
   &:hover{
     background-color: darken(@bg-order-btn, 5%);
   }
+}
+/* заголовки */
+.title {
+  font-size: 2.8rem;
 }
 
 /* header */
@@ -175,13 +179,13 @@ a:hover {
     .bold;
   }
   &__subtitle {
-    margin-top: 4rem;
+    margin-top: 3rem;
     font-size: 1.6rem;
     font-weight: normal;
     line-height: 1.5;
   }
   &__button {
-    margin-top: 4rem;
+    margin-top: 3rem;
   }
 }
 @media(max-width: 992px) {
@@ -224,5 +228,40 @@ a:hover {
       margin-left: auto;
       width: 155px;
     }
+  }
+}
+/* наши преимущества */
+.features {
+  &__title {
+    font-weight: normal;
+  }
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5rem;
+  }
+  &__text {
+    display: inline-block;
+    margin-top: 3rem;
+    font-size: 1.4rem;
+    line-height: 21px;
+    color: @text-features;
+  }
+}
+.feature {
+  text-align: center;
+  &__img-bg {
+    position: relative;
+    width: 220px;
+    height: 140px;
+    text-align: center;
+    background-color: @bg-features;
+  }
+  &__img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }
