@@ -3,7 +3,7 @@
   font-family: 'OpenSans';
   src: url('../fonts/OpenSans.eot');
   src: url('../fonts/OpenSans.eot?#iefix') format('embedded-opentype'), url('../fonts/OpenSans.woff2') format('woff2'), url('../fonts/OpenSans.woff') format('woff'), url('../fonts/OpenSans.ttf') format('truetype');
-  font-weight: normal;
+  font-weight: 100;
   font-style: normal;
   font-display: swap;
 }
@@ -60,8 +60,13 @@ a:hover {
 }
 /* контейнер для контента */
 .container {
-  max-width: 1000px;
+  max-width: 1170px;
   margin: 0px auto;
+}
+@media (max-width: 1200px) {
+  .container {
+    max-width: 970px;
+  }
 }
 @media (max-width: 992px) {
   html {
@@ -230,6 +235,8 @@ a:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   margin-top: 5rem;
 }
 .features__text {
@@ -247,7 +254,6 @@ a:hover {
   width: 220px;
   height: 140px;
   text-align: center;
-  background-color: #5686ae;
 }
 .feature__img {
   position: absolute;
@@ -255,4 +261,29 @@ a:hover {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+}
+.feature_one {
+  background-color: #617192;
+}
+.feature_two {
+  background-color: #1d9fd1;
+}
+.feature_three {
+  background-color: #5686ae;
+}
+.feature_four {
+  background-color: #5a8596;
+}
+@media (max-width: 992px) {
+  .features {
+    text-align: center;
+  }
+  .features__wrap {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .feature {
+    margin: 0rem 2rem 4rem 2rem;
+  }
 }
