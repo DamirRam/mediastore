@@ -310,16 +310,6 @@ a:hover {
     margin: 3rem auto;
     width: 290px;
     height: 250px;
-    &::after{
-      content: "";
-      position: absolute;
-      bottom: -1rem;
-      left: 0px;
-      height: 1px;
-      width: 100%;
-      background-color: @text-features;
-
-    }
   }
 }
 .card {
@@ -333,8 +323,9 @@ a:hover {
     font-weight: normal;
   }
   &__description {
+    border: 1px solid black;
     margin-top: 2rem;
-    height: 50px;
+    height: 70px;
     font-size: 1.4rem;
     color: @text-features;
   }

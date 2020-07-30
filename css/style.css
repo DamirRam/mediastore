@@ -311,15 +311,6 @@ a:hover {
   width: 290px;
   height: 250px;
 }
-.cards__img-wrap::after {
-  content: "";
-  position: absolute;
-  bottom: -1rem;
-  left: 0px;
-  height: 1px;
-  width: 100%;
-  background-color: #707070;
-}
 .card {
   padding: 2rem;
   width: 460px;
@@ -332,8 +323,9 @@ a:hover {
   font-weight: normal;
 }
 .card__description {
+  border: 1px solid black;
   margin-top: 2rem;
-  height: 50px;
+  height: 70px;
   font-size: 1.4rem;
   color: #707070;
 }
