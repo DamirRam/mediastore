@@ -83,7 +83,7 @@ a:hover {
   }
 }
 .section {
-  padding: 10rem 0px;
+  padding: 8rem 0px 1rem 0px;
 }
 /* кнопки */
 .button {
@@ -100,6 +100,7 @@ a:hover {
 /* заголовки */
 .title {
   font-size: 2.8rem;
+  font-weight: normal;
 }
 /* header */
 .header {
@@ -222,9 +223,6 @@ a:hover {
   }
 }
 /* наши преимущества */
-.features__title {
-  font-weight: normal;
-}
 .features__wrap {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -286,4 +284,86 @@ a:hover {
   .feature {
     margin: 0rem 2rem 4rem 2rem;
   }
+}
+/* карточки товаров */
+.cards__title {
+  margin-bottom: 5rem;
+}
+.cards__wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.cards__card {
+  margin: 1rem;
+}
+.cards__img-wrap {
+  position: relative;
+  margin: 3rem auto;
+  width: 290px;
+  height: 250px;
+}
+.cards__img-wrap::after {
+  content: "";
+  position: absolute;
+  bottom: -1rem;
+  left: 0px;
+  height: 1px;
+  width: 100%;
+  background-color: #707070;
+}
+.card {
+  padding: 2rem;
+  width: 460px;
+  max-width: 460px;
+  min-width: 290px;
+  background-color: #f1f5f9;
+}
+.card__title {
+  font-size: 2.2rem;
+  font-weight: normal;
+}
+.card__description {
+  margin-top: 2rem;
+  height: 50px;
+  font-size: 1.4rem;
+  color: #707070;
+}
+.card__img {
+  display: block;
+  width: 290px;
+  height: 100%;
+  margin: 0px auto;
+}
+.card__wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.card__price {
+  font-size: 2.4rem;
+  font-weight: normal;
+  color: #707070;
+}
+.card__link {
+  font-size: 1.4rem;
+  color: #707070;
+  cursor: pointer;
+}
+.card__link:hover {
+  border-bottom: 1px dotted #707070;
 }

@@ -56,6 +56,7 @@
 @bg-call-btn: #5886f5;/* #626c75 */
 @bg-order-btn: #5886f5;
 @bg-dark: #000000;
+@bg-card: #f1f5f9;
 
 /* базовые настройки */
 * {
@@ -103,7 +104,7 @@ a:hover {
   }
 }
 .section{
-  padding: 10rem 0px;
+  padding: 8rem 0px 1rem 0px;
 }
 /* кнопки */
 .button {
@@ -120,6 +121,7 @@ a:hover {
 /* заголовки */
 .title {
   font-size: 2.8rem;
+  font-weight: normal;
 }
 
 /* header */
@@ -236,9 +238,6 @@ a:hover {
 }
 /* наши преимущества */
 .features {
-  &__title {
-    font-weight: normal;
-  }
   &__wrap {
     display: flex;
     justify-content: space-between;
@@ -291,4 +290,77 @@ a:hover {
   .feature {
     margin: 0rem 2rem 4rem 2rem;
   }
+}
+/* карточки товаров */
+.cards {
+  &__title {
+    margin-bottom: 5rem;
+  }
+  &__wrap {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  &__card {
+    margin: 1rem;
+  }
+  &__img-wrap {
+    position: relative;
+    margin: 3rem auto;
+    width: 290px;
+    height: 250px;
+    &::after{
+      content: "";
+      position: absolute;
+      bottom: -1rem;
+      left: 0px;
+      height: 1px;
+      width: 100%;
+      background-color: @text-features;
+
+    }
+  }
+}
+.card {
+  padding: 2rem;
+  width: 460px;
+  max-width: 460px;
+  min-width: 290px;
+  background-color: @bg-card;
+  &__title {
+    font-size: 2.2rem;
+    font-weight: normal;
+  }
+  &__description {
+    margin-top: 2rem;
+    height: 50px;
+    font-size: 1.4rem;
+    color: @text-features;
+  }
+  &__img {
+    display: block;
+    width: 290px;
+    height: 100%;
+    margin: 0px auto;
+  }
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__price {
+    font-size: 2.4rem;
+    font-weight: normal;
+    color: @text-features;
+  }
+  &__link {
+    font-size: 1.4rem;
+    color: @text-features;
+    cursor: pointer;
+    &:hover {
+      border-bottom: 1px dotted @text-features;
+    }
+  }
+  &__button {}
 }
