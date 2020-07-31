@@ -56,6 +56,7 @@
 @bg-call-btn: #5886f5;/* #626c75 */
 @bg-order-btn: #5886f5;
 @bg-dark: #000000;
+@bg-light: #ffffff;
 @bg-card: #f1f5f9;
 
 /* базовые настройки */
@@ -122,6 +123,7 @@ a:hover {
 .title {
   font-size: 2.8rem;
   font-weight: normal;
+  text-align: center;
 }
 
 /* header */
@@ -293,6 +295,7 @@ a:hover {
 }
 /* карточки товаров */
 .cards {
+  padding-bottom: 8rem;
   &__title {
     margin-bottom: 5rem;
   }
@@ -308,29 +311,42 @@ a:hover {
   &__img-wrap {
     position: relative;
     margin: 3rem auto;
-    width: 290px;
+    max-width: 280px;
+    min-width: 250px;
     height: 250px;
   }
 }
 .card {
+  position: relative;
   padding: 2rem;
-  width: 460px;
   max-width: 460px;
-  min-width: 290px;
+  min-width: 280px;
   background-color: @bg-card;
   &__title {
     font-size: 2.2rem;
     font-weight: normal;
   }
   &__description {
+    position: relative;
     margin-top: 2rem;
-    height: 70px;
+    height: 6.5rem;
     font-size: 1.4rem;
     color: @text-features;
+    overflow: hidden;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(rgba(241, 244, 249, 0.1) 60%, rgba(241, 244, 249, 1));
+    }
   }
   &__img {
     display: block;
-    width: 290px;
+    max-width: 265px;
+    min-width: 200px;
     height: 100%;
     margin: 0px auto;
   }
@@ -345,12 +361,20 @@ a:hover {
     color: @text-features;
   }
   &__link {
+    position: absolute;
+    top: 16rem;
+    right: 3rem;
     font-size: 1.4rem;
+    text-align: right;
     color: @text-features;
     cursor: pointer;
     &:hover {
       border-bottom: 1px dotted @text-features;
     }
   }
-  &__button {}
+}
+@media (max-width: 480px) {
+  .card {
+    padding: 1rem;
+  }
 }
