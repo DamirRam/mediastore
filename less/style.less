@@ -435,6 +435,54 @@ a:hover {
   }
 }
 
+/* 4 простых шага */
+.step {
+  padding-bottom: 4rem;
+  &__title {
+    margin: 0px 0px 4rem 0px;
+  }
+  &__text-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+  }
+  &__text {
+    margin-bottom: 3rem;
+    width: 25%;
+    font-size: 1.4rem;
+    color: @text-features;
+    &_bottom {
+      position: relative;
+      top: 150px;
+    }
+  }
+  &__line {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 1.2rem 0px;
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    vertical-align: middle;
+    color: @text-features;
+    .bold;
+    font-size: 1.8rem;
+    border-radius: 15px;
+    background: linear-gradient( to right, #b9dff6,#5886f5);
+  }
+  &__circle {
+    display: block;
+    width: 50px;
+    height: 50px;
+    border: 10px solid rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    background-color: #ffffff;
+    background-clip: padding-box;
+  }
+}
 
 /* формы */
 .form {
