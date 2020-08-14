@@ -49,8 +49,8 @@
 /* настройки цветов */
 /* текст */
 @text-light: #ffffff;
-@text-dark: #000000;
 @text-logo: #e8aa31;
+@text-dark: #000000;
 @text-features: #707070;
 /* фоновые цвета */
 @bg-call-btn: #5886f5;/* #626c75 */
@@ -128,6 +128,47 @@ a:hover {
     padding-left: 10px;
     padding-right: 10px;
   }
+}
+
+/* формы */
+.form {
+  position: relative;
+  &__input {
+    display: block;
+    padding: 1.5rem;
+    margin: 1rem 0rem;
+    width: 100%;
+    font-size: 1.4rem;
+    border: 1px solid @border-input;
+    &:focus {
+      border-color: @bg-call-btn;
+      box-shadow: 0px 0px 10px @bg-call-btn;
+    }
+  }
+  &__button {
+    margin-top: 3.9rem;
+  }
+  &__textarea {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    padding: 1.5rem;
+    height: 10.6rem;
+    font-size: 1.4rem;
+    border: 1px solid @border-input;
+    resize: none;
+    &:focus {
+      border-color: @bg-call-btn;
+      box-shadow: 0px 0px 10px @bg-call-btn;
+    }
+  }
+}
+@media(max-width: 768px) {
+.form {
+  &__textarea {
+    position: static;
+  }
+}
 }
 
 /* header */
@@ -523,7 +564,7 @@ a:hover {
 /* отзывы */
 
 .review {
-  padding-bottom: 8rem;
+  padding-bottom: 6rem;
   background-color: @bg-light;
   font-size: 1.4rem;
   &__wrap {
@@ -563,22 +604,65 @@ a:hover {
   }
 }
 
-
-/* формы */
-.form {
-  &__input {
-    display: block;
-    padding: 1.5rem;
-    margin: 1rem 0rem;
+/* остались вопросы */
+.question {
+  padding-bottom: 0;
+  &__map {
     width: 100%;
-    font-size: 1.4rem;
-    border: 1px solid @border-input;
-    &:focus {
-      border-color: @bg-call-btn;
-      box-shadow: 0px 0px 10px @bg-call-btn;
-    }
+    height: 500px;
+  }
+  &__container {
+    position: relative;
+  }
+  &__block {
+    position: absolute;
+    left: 0px;
+    top: -444px;
+    display: inline-block;
+    max-width: 622px;
+  }
+  &__input {
+    width: 250px;
   }
   &__button {
-    margin-top: 3.9rem;
+    margin-top: 1rem;
   }
 }
+@media(max-width: 992px) {
+  .question {
+    &__map {
+      height: 400px;
+    }
+    &__block {
+      top: -354px;
+      max-width: 571px;
+    }
+  }
+}
+@media(max-width: 768px) {
+  .question {
+    padding-bottom: 435px;
+    &__block {
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 380px;
+      }
+    &__input {
+      width: 100%;
+    }
+  }
+}
+@media(max-width: 480px) {
+  .question {
+    &__map {
+      height: 400px;
+    }
+    &__block {
+      width: 92%;
+      max-width: 380px;
+    }
+  }
+}
+
+
