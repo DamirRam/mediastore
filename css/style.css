@@ -184,8 +184,10 @@ a:hover {
 }
 .logo {
   font-family: "RobotoSlab", sans-serif;
+  font-weight: 700;
 }
 .logo__title {
+  display: block;
   font-size: 2.7rem;
   text-transform: uppercase;
   color: #e8aa31;
@@ -193,7 +195,7 @@ a:hover {
 .logo__word {
   color: #ffffff;
 }
-/* main section */
+/* главный экран */
 .main {
   padding-top: 10rem;
   height: 600px;
@@ -250,16 +252,18 @@ a:hover {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     height: 80px;
+  }
+  .header__phone {
+    margin-right: 0px;
   }
   .header__button {
     display: none;
-  }
-  .header__order {
-    margin-top: -1rem;
   }
   .main {
     background: url(../img/bg-main-xs.jpg) right no-repeat;
@@ -687,5 +691,57 @@ a:hover {
   .question__block {
     width: 92%;
     max-width: 380px;
+  }
+}
+/* footer */
+.footer {
+  padding: 2rem 0px;
+  font-size: 1.4rem;
+  color: #ffffff;
+  background-color: #000000;
+}
+.footer__wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.footer__address {
+  display: block;
+  margin-top: 1.5rem;
+  font-weight: normal;
+}
+.footer__phone {
+  font-size: 2.4rem;
+  color: #ffffff;
+}
+.footer__phone:hover {
+  color: #cccccc;
+}
+.footer__button {
+  display: block;
+  margin-top: 1.5rem;
+  border-bottom: 1px dashed #ffffff;
+  cursor: pointer;
+}
+.footer__button:hover {
+  color: #cccccc;
+  border-color: #cccccc;
+}
+@media (max-width: 480px) {
+  .footer__wrap {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .footer__phone {
+    display: block;
+    margin-top: 1.5rem;
   }
 }
