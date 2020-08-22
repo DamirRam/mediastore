@@ -441,6 +441,31 @@ a:hover {
 .card__link:hover {
   border-bottom: 1px dotted #707070;
 }
+/* больше товаров */
+.more {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.more__title {
+  font-size: 2rem;
+  font-weight: normal;
+  text-align: center;
+}
+.more__link {
+  display: inline-block;
+  margin-left: 1.5rem;
+}
+.more__img {
+  width: 3rem;
+  height: 3rem;
+}
 @media (max-width: 1200px) {
   .card {
     max-width: 475px;
@@ -459,6 +484,15 @@ a:hover {
   }
   .cards__card {
     margin: 2rem;
+  }
+  .more {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .more__inner {
+    margin-top: 1.5rem;
   }
 }
 /* скидка 10 % */
