@@ -11,7 +11,7 @@
 
     <title>Продажа холодильников и кондиционеров от Midea</title>
   </head>
-  <body>
+  <body class="body">
 
   <header class="header">
     <div class="container">
@@ -21,7 +21,7 @@
         </div>
         <div class="header__order">
           <a class="header__phone" href="tel:+998974504927">+998 97 450 49 27</a>
-          <button class="button header__button">Заказать звонок</button>
+          <button class="button header__button js-open-modal" data-modal="call">Заказать звонок</button>
         </div>
       </div>
     </div>
@@ -39,7 +39,7 @@
           <!-- /.main-block__title -->
           <h2 class="main-block__subtitle">Прямые поставки от официального дилера! <br>Только в августе специальные скидки!</h2>
           <!-- /.main-block__subtitle -->
-          <button class="button main-block__button">Оставить заявку</button>
+          <button class="button main-block__button js-open-modal" data-modal="request">Оставить заявку</button>
         </div>
         <!-- /.main-block__wrap -->
       </div>
@@ -109,7 +109,7 @@
             </div>
             <div class="card__wrap">
               <span class="card__price">745 у.е</span>
-              <button class="button card__button">Заказать</button></div>
+              <button class="button card__button js-open-modal" data-modal="order">Заказать</button></div>
             <!-- /.card__wrap -->
           </article>
           <!-- /.card -->
@@ -125,7 +125,7 @@
             </div>
             <div class="card__wrap">
               <span class="card__price">230 у.е</span>
-              <button class="button card__button">Заказать</button></div>
+              <button class="button card__button js-open-modal" data-modal="order">Заказать</button></div>
             <!-- /.card__wrap -->
           </article>
           <!-- /.card -->
@@ -143,7 +143,7 @@
             
             <div class="card__wrap">
               <span class="card__price">590/710 у.е </span>
-              <button class="button card__button">Заказать</button></div>
+              <button class="button card__button js-open-modal" data-modal="order">Заказать</button></div>
             <!-- /.card__wrap -->
           </article>
           <!-- /.card -->
@@ -160,7 +160,7 @@
             </div>
             <div class="card__wrap">
               <span class="card__price">450/620/760 у.е</span>
-              <button class="button card__button">Заказать</button></div>
+              <button class="button card__button js-open-modal" data-modal="order">Заказать</button></div>
             <!-- /.card__wrap -->
           </article>
           <!-- /.card -->
@@ -192,7 +192,7 @@
           <h3 class="main-block__subtitle">Только в августе специальные скидки! Оставьте заявку
           до <span class="main-block__word"> 30 августа.</span> Спешите!</h3>
           <!-- /.main-block__subtitle -->
-          <form  class="form discount__form" action="smart.php" method="post">
+          <form  class="form discount__form" action="mail.php" method="post">
             <input class="form__input" type="text" placeholder="Ваше имя" name="user_name" required>
             <input class="form__input" type="tel" placeholder="Ваш телефон" name="user_phone" required>
             <button class="button form__button">Отправить</button>
@@ -281,7 +281,7 @@
           <!-- /.main-block__title -->
           <h3 class="main-block__subtitle">Оставьте свою заявку прямо сейчас и наши менеджеры свяжутся с вами в течении <span class="main-block__word"> 20 минут</span></h3>
           <!-- /.main-block__subtitle -->
-          <form  class="form question__form" action="smart.php" method="post">
+          <form  class="form question__form" action="mail.php" method="post">
             <input class="form__input question__input" type="text" placeholder="Ваше имя" name="user_name" required>
             <input class="form__input question__input" type="tel" placeholder="Ваш телефон" name="user_phone" required>
             <textarea class="form__textarea question__input" cols="30" rows="4" placeholder="Сообщение" name="user_message"></textarea>
@@ -309,14 +309,85 @@
       </div>
       <div class="footer__wrap">
         <span class="footer__address">Ташкент, рынок Абу-Сахий</span>
-        <span class="footer__button">Заказать звонок</span>
+        <span class="footer__button js-open-modal" data-modal="call">Заказать звонок</span>
       </div>
     </div>
     <!-- /.container -->
   </footer>
   <!-- /.footer -->
 
+  <!-- модальные окна -->
+  <!-- заказать звонок -->
+  <div class="modal" data-modal="call">
+    <div class="modal__inner">
+      <div class="modal__content">
+      <button class="modal__btn js-close-modal">&#10006</button>
+      <h2 class="modal__title">Заказать звонок</h2>
+      <form class="form" action="mail.php" method="post">
+        <input class="form__input" type="text" placeholder="Ваше имя" name="user_name" required>
+        <input class="form__input" type="tel" placeholder="Ваш телефон" name="user_phone" required>
+        <button class="button modal__button">Заказать звонок</button>
+      </form>
+      </div>
+      <!-- /.modal__content -->
+    </div>
+    <!-- /.modal__inner -->
+  </div>
+  <!-- /.modal -->
+
+  <!-- оставить заявку -->
+  <div class="modal" data-modal="request">
+    <div class="modal__inner">
+      <div class="modal__content">
+      <button class="modal__btn js-close-modal">&#10006</button>
+      <h2 class="modal__title">Оставить заявку</h2>
+        <form class="form" action="mail.php" method="post">
+          <input class="form__input" type="text" placeholder="Ваше имя" name="user_name" required>
+          <input class="form__input" type="tel" placeholder="Ваш телефон" name="user_phone" required>
+          <button class="button modal__button">Оставить заявку</button>
+        </form>
+      </div>
+      <!-- /.modal__content -->
+    </div>
+    <!-- /.modal__inner -->
+  </div>
+  <!-- /.modal -->
+
+  <!-- Заказать -->
+  <div class="modal" data-modal="order">
+    <div class="modal__inner">
+      <div class="modal__content">
+      <button class="modal__btn js-close-modal">&#10006</button>
+      <h2 class="modal__title">Заказать</h2>
+        <form class="form" action="mail.php" method="post">
+          <input class="form__input" type="text" placeholder="Ваше имя" name="user_name" required>
+          <input class="form__input" type="tel" placeholder="Ваш телефон" name="user_phone" required>
+          <button class="button modal__button">Заказать</button>
+        </form>
+      </div>
+      <!-- /.modal__content -->
+    </div>
+    <!-- /.modal__inner -->
+  </div>
+  <!-- /.modal -->
+
+  <!-- Спасибо -->
+  <div class="modal" data-modal="thanks">
+    <div class="modal__inner">
+      <div class="modal__content">
+      <button class="modal__btn js-close-modal">&#10006</button>
+      <h2 class="modal__title modal__title_center">Спасибо за заявку!</h2>
+      <span class="modal__text">Наш менеджер свяжется с вами в течение 20 минут.</span>
+      </div>
+      <!-- /.modal__content -->
+      </div>
+    <!-- /.modal__inner -->
+  </div>
+  <!-- /.modal -->
+
+  <!-- подключение скриптов -->
+  <script src="js/main.js"></script>
   <!-- виджет обратной связи spikmi -->
-  <script type="text/javascript" src="https://spikmi.com/Widget?Id=4011"></script>
+  <script src="https://spikmi.com/Widget?Id=4011"></script>
   </body>
 </html>
