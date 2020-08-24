@@ -116,6 +116,7 @@ a:hover {
   display: block;
   padding: 1.5rem;
   margin: 1rem 0rem;
+  height: 4.8rem;
   width: 100%;
   font-size: 1.4rem;
   border: 1px solid #b3b3b3;
@@ -130,9 +131,10 @@ a:hover {
 }
 .form__textarea {
   position: absolute;
-  right: 0px;
+  left: 26rem;
   top: 0px;
   padding: 1.5rem;
+  width: 100%;
   height: 10.6rem;
   font-size: 1.4rem;
   border: 1px solid #b3b3b3;
@@ -220,13 +222,13 @@ a:hover {
   font-weight: 700;
 }
 .main-block__subtitle {
-  margin-top: 3rem;
+  margin-top: 2rem;
   font-size: 1.6rem;
   font-weight: normal;
   line-height: 1.5;
 }
 .main-block__button {
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
 @media (max-width: 1200px) {
   .main {
@@ -493,6 +495,13 @@ a:hover {
     margin-top: 1.5rem;
   }
 }
+@media (max-width: 480px) {
+  .card {
+    padding: 1.5rem;
+    margin: 0px;
+    margin-top: 2rem;
+  }
+}
 /* скидка 10 % */
 .discount {
   padding-bottom: 8rem;
@@ -670,59 +679,38 @@ a:hover {
 }
 /* остались вопросы */
 .question {
-  padding-bottom: 0;
+  padding-bottom: 0px;
 }
 .question__map {
-  width: 100%;
-  height: 500px;
+  height: 45rem;
 }
 .question__container {
   position: relative;
 }
 .question__block {
   position: absolute;
-  left: 0px;
-  top: -444px;
-  display: inline-block;
-  max-width: 622px;
+  top: -41.5rem;
+  max-width: 62rem;
 }
 .question__input {
-  width: 250px;
+  max-width: 25rem;
 }
 .question__button {
   margin-top: 1rem;
 }
 @media (max-width: 992px) {
-  .question__map {
-    height: 400px;
-  }
   .question__block {
-    top: -354px;
-    max-width: 571px;
+    max-width: 58.8rem;
   }
 }
 @media (max-width: 768px) {
-  .question {
-    padding-bottom: 435px;
-  }
   .question__block {
-    top: 20px;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
-    width: 380px;
+    position: static;
+    max-width: 380px;
+    margin: 1rem auto;
   }
   .question__input {
-    width: 100%;
-  }
-}
-@media (max-width: 480px) {
-  .question__map {
-    height: 400px;
-  }
-  .question__block {
-    width: 92%;
-    max-width: 380px;
+    max-width: 100%;
   }
 }
 /* footer */
@@ -779,6 +767,7 @@ a:hover {
 }
 /* модальные окна */
 .modal {
+  display: none;
   position: fixed;
   top: 0px;
   bottom: 0px;
@@ -788,14 +777,12 @@ a:hover {
   width: 100%;
   z-index: 999999999;
   background-color: rgba(0, 0, 0, 0.7);
-  -webkit-transition: 0.3s all;
-  transition: 0.3s all;
   opacity: 0;
-  visibility: hidden;
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 .modal__inner {
-  position: absolute;
+  position: relative;
   top: 50%;
   left: 50%;
   width: 370px;
@@ -806,15 +793,13 @@ a:hover {
           transform: translate(-50%, -50%);
 }
 .modal__content {
-  position: relative;
+  position: absolute;
   width: 100%;
   height: 100%;
   min-height: 32rem;
   padding: 4rem;
+  margin: 2rem 0px;
   background-color: #ffffff;
-  opacity: 0;
-  -webkit-transition: 0.3s all;
-  transition: 0.3s all;
 }
 .modal__btn {
   position: absolute;
@@ -849,8 +834,17 @@ a:hover {
   right: 0px;
 }
 .active {
-  visibility: visible;
+  display: block;
   opacity: 1;
-  -webkit-transition: 0.3s all;
-  transition: 0.3s all;
+}
+@media (max-width: 992px) {
+  .modal__content {
+    min-height: 27rem;
+  }
+}
+@media (max-width: 768px) {
+  .modal__content {
+    padding: 2rem;
+    height: 20rem;
+  }
 }

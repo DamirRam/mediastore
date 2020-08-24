@@ -139,6 +139,7 @@ a:hover {
     display: block;
     padding: 1.5rem;
     margin: 1rem 0rem;
+    height: 4.8rem;
     width: 100%;
     font-size: 1.4rem;
     border: 1px solid @border-input;
@@ -152,9 +153,10 @@ a:hover {
   }
   &__textarea {
     position: absolute;
-    right: 0px;
+    left: 26rem;
     top: 0px;
     padding: 1.5rem;
+    width: 100%;
     height: 10.6rem;
     font-size: 1.4rem;
     border: 1px solid @border-input;
@@ -237,13 +239,13 @@ a:hover {
     .bold;
   }
   &__subtitle {
-    margin-top: 3rem;
+    margin-top: 2rem;
     font-size: 1.6rem;
     font-weight: normal;
     line-height: 1.5;
   }
   &__button {
-    margin-top: 3rem;
+    margin-top: 2rem;
   }
 }
 @media(max-width: 1200px) {
@@ -483,6 +485,13 @@ a:hover {
     }
   }
 }
+@media (max-width: 480px) {
+  .card {
+    padding: 1.5rem;
+    margin: 0px;
+    margin-top: 2rem;
+  }
+}
 
 /* скидка 10 % */
 .discount {
@@ -639,61 +648,42 @@ a:hover {
 
 /* остались вопросы */
 .question {
-  padding-bottom: 0;
+  padding-bottom: 0px;
   &__map {
-    width: 100%;
-    height: 500px;
+    height: 45rem;
   }
   &__container {
     position: relative;
   }
   &__block {
     position: absolute;
-    left: 0px;
-    top: -444px;
-    display: inline-block;
-    max-width: 622px;
+    top: -41.5rem;
+    max-width: 62rem;
   }
   &__input {
-    width: 250px;
+    max-width: 25rem;
   }
   &__button {
     margin-top: 1rem;
   }
 }
+
 @media(max-width: 992px) {
   .question {
-    &__map {
-      height: 400px;
-    }
     &__block {
-      top: -354px;
-      max-width: 571px;
-    }
+      max-width: 58.8rem;
   }
+}
 }
 @media(max-width: 768px) {
   .question {
-    padding-bottom: 435px;
     &__block {
-      top: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 380px;
-      }
-    &__input {
-      width: 100%;
-    }
-  }
-}
-@media(max-width: 480px) {
-  .question {
-    &__map {
-      height: 400px;
-    }
-    &__block {
-      width: 92%;
+      position: static;
       max-width: 380px;
+      margin: 1rem auto;
+    }
+    &__input {
+      max-width: 100%;
     }
   }
 }
@@ -746,6 +736,7 @@ a:hover {
 
 /* модальные окна */
 .modal {
+  display: none;
   position: fixed;
   top: 0px;
   bottom: 0px;
@@ -755,12 +746,11 @@ a:hover {
   width: 100%;
   z-index: 999999999;
   background-color: rgba(0, 0, 0, 0.7);
-  transition: 0.3s all;
   opacity: 0;
-  visibility: hidden;
   overflow-y: scroll;
+  overflow-x: hidden;
   &__inner {
-    position: absolute;
+    position: relative;
     top: 50%;
     left: 50%;
     width: 370px;
@@ -770,14 +760,13 @@ a:hover {
     transform: translate(-50%, -50%);
   }
   &__content {
-    position: relative;
+    position: absolute;
     width: 100%;
     height: 100%;
     min-height: 32rem;
     padding: 4rem;
+    margin: 2rem 0px;
     background-color: @bg-light;
-    opacity: 0;
-    transition: 0.3s all;
   }
   &__btn {
     position: absolute;
@@ -813,7 +802,21 @@ a:hover {
   right: 0px;
 }
 .active {
-  visibility: visible;
+  display: block;
   opacity: 1;
-  transition: 0.3s all;
+}
+@media (max-width: 992px) {
+  .modal {
+    &__content {
+      min-height: 27rem;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .modal {
+    &__content {
+      padding: 2rem;
+      height: 20rem;
+    }
+  }
 }
