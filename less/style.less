@@ -53,7 +53,7 @@
 @text-dark: #000000;
 @text-features: #707070;
 /* фоновые цвета */
-@bg-call-btn: #5886f5;/* #626c75 */
+@bg-call-btn: #5886f5;
 @bg-order-btn: #5886f5;
 @bg-dark: #000000;
 @bg-light: #ffffff;
@@ -736,7 +736,6 @@ a:hover {
 
 /* модальные окна */
 .modal {
-  display: none;
   position: fixed;
   top: 0px;
   bottom: 0px;
@@ -745,28 +744,40 @@ a:hover {
   height: 100%;
   width: 100%;
   z-index: 999999999;
+  display: none;
+  justify-content: center;
+  align-items: center;
   background-color: rgba(0, 0, 0, 0.7);
   opacity: 0;
   overflow-y: scroll;
   overflow-x: hidden;
   &__inner {
-    position: relative;
-    top: 50%;
-    left: 50%;
-    width: 370px;
-    max-width: 100%;
-    height: 32rem;
-    max-height: 100%;
-    transform: translate(-50%, -50%);
+    display: block;
+    width: 100%;
+    max-width: 37rem;
+    height: 100%;
+    max-height: 33rem;
+    &_size {
+      width: 90%;
+      max-width: 1200px;
+      max-height: 640px;
+    }
   }
   &__content {
-    position: absolute;
+    position: relative;
+    display: block;
     width: 100%;
     height: 100%;
-    min-height: 32rem;
+    min-height: 30rem;
+    max-height: 31rem;
     padding: 4rem;
-    margin: 2rem 0px;
+    margin: 10px 0px;
     background-color: @bg-light;
+    &_height {
+      overflow: hidden;
+      max-height: 650px;
+      min-height: 610px;
+    }
   }
   &__btn {
     position: absolute;
@@ -802,21 +813,141 @@ a:hover {
   right: 0px;
 }
 .active {
-  display: block;
+  display: flex;
   opacity: 1;
+}
+/* всплывающая карточка товара*/
+.card-wrap {
+  display: flex;
+  flex-basis: 100%;
+  height: 90%;
+  background-color: @bg-light;
+}
+/* слайдер */
+.slider {
+  flex-basis: 60%;
+  position: relative;
+  height: 100%;
+  background-color: @bg-light;
+  &__btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: opacity 0.3s;
+  }
+  &__inner {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  }
+  &__img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 100%;
+    max-width: 100%;
+    opacity: 0;
+    transition: opacity 1s;
+  &:first-child {
+    opacity: 1;
+  
+    }
+  }
+}
+.js-btn-prev {
+  left: 10px;
+}
+.js-btn-next {
+  right: 10px;
+}
+/* описание товара*/
+.description {
+  flex-basis: 40%;
+  padding: 0px 1rem 0px 2rem;
+  font-size: 1.4rem;
+  line-height: 1.3;
+  color: @text-features;
+  background-color: @bg-light;
+  &__title {
+    margin: 0.5rem 0px;
+    color: @text-dark;
+  }
+  &__text {
+    margin: 0.5rem 0px;
+  }
+  &__list {
+    margin: 0.5rem 0px;
+    padding-left: 0px;
+  }
+  &__item {
+    display: block;
+    list-style-type: none;
+  }
+  &__character {
+    color: @text-dark;
+  }
+}
+@media (max-width: 1200px) {
+  .modal {
+    &__inner {
+      &_size {
+      width: 90%;
+    }
+    }
+  }
+  .slider {
+    flex-basis: 55%;
+    min-height: 400px;
+  }
+  .description {
+    flex-basis: 45%;
+  }
 }
 @media (max-width: 992px) {
   .modal {
     &__content {
-      min-height: 27rem;
+      min-height: 30rem;
+      &_height {
+        min-height: 500px;
+      }
     }
+  }
+  .slider {
+    flex-basis: 50%;
+  }
+  .description {
+    flex-basis: 50%;
   }
 }
 @media (max-width: 768px) {
   .modal {
     &__content {
       padding: 2rem;
-      height: 20rem;
+      min-height: 27rem;
+      max-height: 27rem;
+      &_height {
+        overflow: visible;
+        padding: 2rem 0px;
+      }
     }
+    &__title {
+      &_center {
+        padding: 0px 2rem;
+      }
+    }
+  }
+  .card-wrap {
+    flex-wrap: wrap;
+  }
+  .slider {
+    padding: 0px 2rem;
+    flex-basis: 100%;
+  }
+  .description {
+    display: block;
+    padding: 2rem;
+    margin-bottom: 10px;
+    flex-basis: 100%;
   }
 }

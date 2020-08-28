@@ -35,7 +35,7 @@ window.addEventListener("load", function() {
         let modalId = this.getAttribute("data-modal");
         let modal   = document.querySelector(".modal[data-modal='"+modalId+"']");
         modal.classList.add("active");
-        modal.querySelector(".modal__content").classList.add("active");
+        /*modal.querySelector(".modal__content").classList.add("active");*/
         noScroll(modal);
       });//end addEventListener
   };//end for
@@ -43,12 +43,12 @@ window.addEventListener("load", function() {
   for(let i=0; i<closeBtns.length; i++){
     closeBtns[i].addEventListener("click", function (event) {
       let modal = this.closest(".modal");
-      this.closest(".modal__content").classList.remove("active");
+      /*this.closest(".modal__content").classList.remove("active");*/
       modal.classList.remove("active");
       scroll(modal);
     });//end addEventListener
   };
-  // отключение анимации кнопки с internet explorer
+  // отключение анимации кнопки internet explorer
   let buttons = document.querySelectorAll("button");
   for(let i=0; i<buttons.length; i++) {
     buttons[i].addEventListener("mousedown", function (event){
@@ -56,4 +56,41 @@ window.addEventListener("load", function() {
     console.log("click");
   });//end addEventListener
   }//end for
+
+  //слайдер
+  function slider(sliderId) {
+    let sliderInner = document.querySelector(sliderId);
+    let nextBtn     = sliderInner.parentNode.querySelector(".js-btn-next");
+    let prevBtn     = sliderInner.parentNode.querySelector(".js-btn-prev");
+    let i           = 0;
+
+    sliderInner = sliderInner.children;
+
+    nextBtn.onclick = function () {
+      sliderInner[i].style.opacity = "0";
+      i++;
+      if(i==sliderInner.length) {
+        i=0;
+      }
+      sliderInner[i].style.opacity = "1";
+    };
+
+    prevBtn.onclick = function () {
+      sliderInner[i].style.opacity = "0";
+      i--;
+      if(i==-1) {
+        i = sliderInner.length-1;
+      };
+      sliderInner[i].style.opacity = "1";
+    };
+
+  };//end slider function
+  //slider 1
+  slider(".js-slider-1");
+  //slider 2
+  slider(".js-slider-2");
+  //slider 3
+  slider(".js-slider-3");
+  //slider 4
+  slider(".js-slider-4");
 });

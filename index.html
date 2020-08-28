@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
   <html lang="ru">
   <head>
     <!-- Мета теги -->
@@ -102,7 +102,7 @@
             <p class="card__description">
              Является одним из самых популярных предложений на рынке, среди холодильников. В нём много технологических инноваций и в то же время он имеет великолепный дизайн, который придаст каждому дому элегантность и стиль.
             </p>
-            <a class="card__link" href="#">Подробнее</a>
+            <a class="card__link js-open-modal" href="#" data-modal="card-1">Подробнее</a>
             <!-- /.card__description -->
             <div class="cards__img-wrap">
               <img class="card__img" src="img/cards/card-1.png" alt="Холодильник HC-567 WEN">
@@ -119,7 +119,7 @@
             <!-- /.card__title -->
             <p class="card__description">Морозильник HS-108  имеет множество вариантов использования. Его можно поставить в офисе, в гостинице, в частном доме. Применяется техника для хранения продуктов в состоянии глубокой заморозки.
             </p>
-            <a class="card__link" href="#">Подробнее</a>
+            <a class="card__link js-open-modal" href="#" data-modal="card-2">Подробнее</a>
             <!-- /.card__description -->
             <div class="cards__img-wrap">
               <img class="card__img" src="img/cards/card-2.png" alt="Холодильник HD-273">
@@ -137,7 +137,7 @@
             <p class="card__description">
             Сплит системы Midea серии Blanc имеют высокую энергоэффективность в ночное время. Для этого включается специальный режим "Комфортный сон", которые автоматически изменяет температуру на один градус в течение первых двух часов после включения.
             </p>
-            <a class="card__link" href="#">Подробнее</a>
+            <a class="card__link js-open-modal" href="#" data-modal="card-3">Подробнее</a>
             <!-- /.card__description -->
             <div class="cards__img-wrap">
               <img class="card__img" src="img/cards/card-3.png" alt="Сплит-система Midea Blanc">
@@ -155,7 +155,7 @@
             <p class="card__description">
               Современный кондиционер бизнес класса, имеет большой функционал с интересным дизайном. Главная составляющая сплит-системы - японский компрессор Toshiba, известен своей надежностью. А одним из важнейших преимуществ является встроенный стабилизатор, позволяющий работать даже при низком напряжении в электросети.
             </p>
-            <a class="card__link" href="#">Подробнее</a>
+            <a class="card__link js-open-modal" href="#" data-modal="card-4">Подробнее</a>
             <!-- /.card__description -->
             <div class="cards__img-wrap">
               <img class="card__img" src="img/cards/card-4.png" alt="Mirror *Low voltage 145-265v">
@@ -388,9 +388,195 @@
   </div>
   <!-- /.modal -->
 
+  <!-- Карточки товаров в всплывающих окна-->
+  <!--   карточка 1 -->
+  <div class="modal" data-modal="card-1">
+    <div class="modal__inner modal__inner_size">
+      <div class="modal__content modal__content_height">
+      <button class="modal__btn js-close-modal">&#10006</button>
+      <h2 class="modal__title modal__title_center">Холодильник Midea HC-567 WEN</h2>
+      <article class="card-wrap">
+        <div class="slider">
+          <div class="slider__inner js-slider-1">
+            <img class="slider__img" src="img/cards/HC-567/1.jpg" alt="Midea HC-567 WEN">
+            <img class="slider__img" src="img/cards/HC-567/2.jpg" alt="Midea HC-567 WEN">
+          </div>
+          <input class="js-btn-prev slider__btn" type="image" src="img/left-arrow.svg">
+          <input class="js-btn-next slider__btn" type="image" src="img/right-arrow.svg">
+        </div>
+        <!-- /.slider -->
+        <div class="description">
+          <h3 class="description__title">Описание</h3>
+          <p class="description__text">Является одним из самых популярных предложений на рынке, среди холодильников. В нём много технологических инноваций и в то же время он имеет великолепный дизайн, который придаст каждому дому элегантность и стиль.</p>
+          <h3 class="description__title">Характеристики</h3>
+          <ul class="description__list">
+            <li class="description__item">Класс энергоэффективности:<span class="description__character"> А+</span></li>
+            <li class="description__item">Объём морозильной камеры:<span class="description__character"> 113л</span></li>
+            <li class="description__item">Объём холодильной камеры:<span class="description__character"> 324л</span></li>
+            <li class="description__item">Система:<span class="description__character"> No-Frost</span></li>
+            <li class="description__item">Уровень шума: <span class="description__character"> 43дБ</span></li>
+            <li class="description__item">Размер (В*Ш*Г):<span class="description__character"> 192*872*73 см</span></li>
+            <li class="description__item">Цвет:<span class="description__character"> Стальной</span></li>
+          </ul>
+          <h3 class="description__title">Гарантия</h3>
+          <span class="description__text">3 года гарантии</span>
+          <h3 class="description__title">Цена: 745 у.е</h3>
+          
+        </div>
+        <!-- /.description -->
+      </article>
+      <!-- /.card-wrap -->
+      </div>
+      <!-- /.modal__content -->
+      </div>
+    <!-- /.modal__inner -->
+  </div>
+  <!-- /.modal -->
+
+
+  <!--   карточка 2 -->
+  <div class="modal" data-modal="card-2">
+    <div class="modal__inner modal__inner_size">
+      <div class="modal__content modal__content_height">
+      <button class="modal__btn js-close-modal">&#10006</button>
+      <h2 class="modal__title modal__title_center">Холодильник Midea HS-108</h2>
+      <article class="card-wrap">
+        <div class="slider">
+          <div class="slider__inner js-slider-2">
+            <img class="slider__img" src="img/cards/HS-108/1.jpg" alt="Midea HS-108">
+            <img class="slider__img" src="img/cards/HS-108/2.jpg" alt="Midea HS-108">
+          </div>
+          <input class="js-btn-prev slider__btn" type="image" src="img/left-arrow.svg">
+          <input class="js-btn-next slider__btn" type="image" src="img/right-arrow.svg">
+        </div>
+        <!-- /.slider -->
+        <div class="description">
+          <h3 class="description__title">Описание</h3>
+          <p class="description__text">Морозильник HS-108  имеет множество вариантов использования. Его можно поставить в офисе, в гостинице, в частном доме. Применяется техника для хранения продуктов в состоянии глубокой заморозки.
+          </p>
+          <h3 class="description__title">Характеристики</h3>
+          <ul class="description__list">
+            <li class="description__item">Класс энергоэффективности:<span class="description__character"> А+</span></li>
+            <li class="description__item">Объём морозильной камеры:<span class="description__character"> 86л</span></li>
+            <li class="description__item">Система:<span class="description__character"> De-Frost</span></li>
+            <li class="description__item">Уровень шума: <span class="description__character"> 39дБ</span></li>
+            <li class="description__item">Размер (В*Ш*Г):<span class="description__character">  85*55*58 см</span></li>
+            <li class="description__item">Цвет:<span class="description__character"> Стальной/Белый</span></li>
+          </ul>
+          <h3 class="description__title">Гарантия</h3>
+          <span class="description__text">3 года гарантии</span>
+          <h3 class="description__title">Цена: 230 у.е</h3>
+        </div>
+        <!-- /.description -->
+      </article>
+      <!-- /.card-wrap -->
+      </div>
+      <!-- /.modal__content -->
+      </div>
+    <!-- /.modal__inner -->
+  </div>
+  <!-- /.modal -->
+
+
+  <!--   карточка 3 -->
+  <div class="modal" data-modal="card-3">
+    <div class="modal__inner modal__inner_size">
+      <div class="modal__content modal__content_height">
+      <button class="modal__btn js-close-modal">&#10006</button>
+      <h2 class="modal__title modal__title_center">Сплит-система Midea Blanc</h2>
+      <article class="card-wrap">
+        <div class="slider">
+          <div class="slider__inner js-slider-3">
+            <img class="slider__img" src="img/cards/blanc/1.jpg" alt="Midea Blanc">
+            <img class="slider__img" src="img/cards/blanc/2.jpg" alt="Midea Blanc">
+            <img class="slider__img" src="img/cards/blanc/3.jpg" alt="Midea Blanc">
+            <img class="slider__img" src="img/cards/blanc/4.jpg" alt="Midea Blanc">
+          </div>
+          <input class="js-btn-prev slider__btn" type="image" src="img/left-arrow.svg">
+          <input class="js-btn-next slider__btn" type="image" src="img/right-arrow.svg">
+        </div>
+        <!-- /.slider -->
+        <div class="description">
+          <h3 class="description__title">Описание</h3>
+          <p class="description__text">Сплит системы Midea серии Blanc имеют высокую энергоэффективность в ночное время. Для этого включается специальный режим "Комфортный сон", которые автоматически изменяет температуру на один градус в течение первых двух часов после включения.</p>
+          <h3 class="description__title">Характеристики</h3>
+          <ul class="description__list">
+            <li class="description__item">Класс энергоэффективности:<span class="description__character"> D</span></li>
+            <li class="description__item">Обслуживаемая площадь:<span class="description__character"> 52/72 м<sup>2</sup></span></li>
+            <li class="description__item">Уровень шума: <span class="description__character"> 32/40 дБ</span></li>
+            <li class="description__item">Мощность: <span class="description__character"> 18/24 BTU</span></li>
+            <li class="description__item">Габариты:<span class="description__character"> 18 - 77*33*55,5 см /24 - 84,5*36,3*70,2 см</span></li>
+            <li class="description__item">Цвет:<span class="description__character"> Белый</span></li>
+          </ul>
+          <h3 class="description__title">Дополнительно</h3>
+          <span class="description__item">Таймер</span>
+          <span class="description__item">Регулировка скорости вращения вентилятора</span>
+          <h3 class="description__title">Гарантия</h3>
+          <span class="description__item">3 года гарантии</span>
+          <span class="description__item">10 лет гарантии на компрессор </span>
+          <h3 class="description__title">Цена: 590/710 у.е</h3>
+        </div>
+        <!-- /.description -->
+      </article>
+      <!-- /.card-wrap -->
+      </div>
+      <!-- /.modal__content -->
+      </div>
+    <!-- /.modal__inner -->
+  </div>
+  <!-- /.modal -->
+
+
+  <!--   карточка 4 -->
+  <div class="modal" data-modal="card-4">
+    <div class="modal__inner modal__inner_size">
+      <div class="modal__content modal__content_height">
+      <button class="modal__btn js-close-modal">&#10006</button>
+      <h2 class="modal__title modal__title_center">Aurora *Low voltage 145-265v</h2>
+      <article class="card-wrap">
+        <div class="slider">
+          <div class="slider__inner js-slider-4">
+            <img class="slider__img" src="img/cards/aurora/1.jpg" alt="Midea HC-567 WEN">
+            <img class="slider__img" src="img/cards/aurora/2.jpg" alt="Midea HC-567 WEN">
+          </div>
+          <input class="js-btn-prev slider__btn" type="image" src="img/left-arrow.svg">
+          <input class="js-btn-next slider__btn" type="image" src="img/right-arrow.svg">
+        </div>
+        <!-- /.slider -->
+        <div class="description">
+          <h3 class="description__title">Описание</h3>
+          <p class="description__text">Современный кондиционер бизнес класса, имеет большой функционал с интересным дизайном. Главная составляющая сплит-системы - японский компрессор Toshiba, известен своей надежностью. А одним из важнейших преимуществ является встроенный стабилизатор, позволяющий работать даже при низком напряжении в электросети.</p>
+          <h3 class="description__title">Характеристики</h3>
+          <ul class="description__list">
+            <li class="description__item">Класс энергоэффективности:<span class="description__character"> А</span></li>
+            <li class="description__item">Обслуживаемая площадь:<span class="description__character"> 35/52/72<sup>2</sup></span></li>
+            <li class="description__item">Уровень шума: <span class="description__character"> 19/41дБ</span></li>
+            <li class="description__item">Мощность: <span class="description__character"> 12/18/24 BTU</span></li>
+            <li class="description__item">Габариты:<span class="description__character"> 12/18 - 70*30*55,5 см /24 - 84,5*36,3*70,2 см</span></li>
+            <li class="description__item">Цвет:<span class="description__character"> Белый</span></li>
+          </ul>
+          <h3 class="description__title">Дополнительно</h3>
+          <span class="description__item">Таймер</span>
+          <span class="description__item">Регулировка скорости вращения вентилятора</span>
+          <h3 class="description__title">Гарантия</h3>
+          <span class="description__item">3 года гарантии</span>
+          <span class="description__item">10 лет гарантии на компрессор </span>
+          <h3 class="description__title">Цена: 450/620/760 у.е</h3>
+        </div>
+        <!-- /.description -->
+      </article>
+      <!-- /.card-wrap -->
+      </div>
+      <!-- /.modal__content -->
+      </div>
+    <!-- /.modal__inner -->
+  </div>
+  <!-- /.modal -->
+
+
   <!-- подключение скриптов -->
   <script src="js/main.js"></script>
   <!-- виджет обратной связи spikmi -->
-  <script src="https://spikmi.com/Widget?Id=4011"></script>
+  <script src="https ://spikmi.com/Widget?Id=4011"></script>
   </body>
 </html>
