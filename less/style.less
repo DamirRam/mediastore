@@ -10,19 +10,6 @@
     font-style: normal;
     font-display: swap;
 }
-
-@font-face {
-    font-family: 'RobotoSlab';
-    src: url('../fonts/RobotoSlab-Regular.eot');
-    src: url('../fonts/RobotoSlab-Regular.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/RobotoSlab-Regular.woff2') format('woff2'),
-        url('../fonts/RobotoSlab-Regular.woff') format('woff'),
-        url('../fonts/RobotoSlab-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
 @font-face {
     font-family: 'OpenSans-bold';
     src: url('../fonts/OpenSans-Bold.eot');
@@ -42,14 +29,10 @@
     font-family: "OpenSans-bold", sans-serif;
     font-weight: @bold;
 }
-.roboto(){
-    font-family: "RobotoSlab", sans-serif;
-}
 
 /* настройки цветов */
 /* текст */
 @text-light: #ffffff;
-@text-logo: #e8aa31;
 @text-dark: #000000;
 @text-features: #707070;
 /* фоновые цвета */
@@ -207,16 +190,11 @@ a:hover {
   }
 }
 .logo {
-  .roboto;
-  font-weight: 700;
-  &__title {
-    display: block;
-    font-size: 2.7rem;
-    text-transform: uppercase;
-    color: @text-logo;
-  }
-  &__word {
-    color: @text-light;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__img {
+    width: 20rem;
   }
 }
 
