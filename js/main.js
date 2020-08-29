@@ -35,7 +35,6 @@ window.addEventListener("load", function() {
         let modalId = this.getAttribute("data-modal");
         let modal   = document.querySelector(".modal[data-modal='"+modalId+"']");
         modal.classList.add("active");
-        /*modal.querySelector(".modal__content").classList.add("active");*/
         noScroll(modal);
       });//end addEventListener
   };//end for
@@ -43,7 +42,6 @@ window.addEventListener("load", function() {
   for(let i=0; i<closeBtns.length; i++){
     closeBtns[i].addEventListener("click", function (event) {
       let modal = this.closest(".modal");
-      /*this.closest(".modal__content").classList.remove("active");*/
       modal.classList.remove("active");
       scroll(modal);
     });//end addEventListener
@@ -53,7 +51,6 @@ window.addEventListener("load", function() {
   for(let i=0; i<buttons.length; i++) {
     buttons[i].addEventListener("mousedown", function (event){
     event.preventDefault();
-    console.log("click");
   });//end addEventListener
   }//end for
 
