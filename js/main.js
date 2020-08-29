@@ -9,10 +9,14 @@ window.addEventListener("load", function() {
 
   function hideSpikmi () {
   const spikmi = spikmiInit();
-  let pageHeight  = body.offsetHeight-document.querySelector(".js-footer").offsetHeight;
-  let pageYOffset = window.pageYOffset+document.documentElement.clientHeight;
+  const footer = document.querySelector(".js-footer");
+  let footerY  = footer.getBoundingClientRect().top;
+  let footerHeight = footer.offsetHeight;
+  let windowHeight = document.documentElement.clientHeight;
+  windowHeight = windowHeight - footerHeight;
+  footerY = footerY - windowHeight;
 
-  if (pageYOffset >= pageHeight) {
+  if (footerY<=footerHeight) {
     spikmi.style.display = "none";
   }
   else {
@@ -34,23 +38,34 @@ window.addEventListener("load", function() {
   function noScroll (modal) {
     offsetTop          = window.pageYOffset;
     let scrollBarWidth = window.innerWidth-body.offsetWidth;
-    const spikmi       = spikmiInit();
+
     modal.style.overflowY ="scroll";
     body.style.overflowY = "hidden";
-    spikmi.style.right = scrollBarWidth+"px";
     body.style.top = "-"+offsetTop+"px";
     body.style.right = scrollBarWidth+"px";
     body.style.position = "fixed";
+
+    const spikmi       = spikmiInit();
+    let position = window.getComputedStyle(spikmi).right;
+    if (position == "0px") {
+      spikmi.style.right = scrollBarWidth+"px";
+    }
   };
 
   function scroll (modal) {
-    const spikmi = spikmiInit();
+    let scrollBarWidth = window.innerWidth-body.offsetWidth;
+
     modal.style.overflowY="hidden"
     body.style.position = "static";
-    spikmi.style.right = "0px";
     body.style.right = "0px";
     body.style.overflowY ="scroll";
     window.scroll(0, offsetTop);
+
+    const spikmi = spikmiInit();
+    let position = window.getComputedStyle(spikmi).right;
+    if (position == scrollBarWidth+"px") {
+      spikmi.style.right = "0px";
+    }
   };
 
   //открытие и закрытие модальных окон
