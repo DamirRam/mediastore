@@ -138,4 +138,50 @@ window.addEventListener("load", function() {
   slider(".js-slider-3");
   //slider 4
   slider(".js-slider-4");
+
+  //яндекс карты отложенная загрузка и мобильная карта
+  //изменение центра карты при именении размера окна
+  function setCenter (myMap) {
+    let windowWidth = window.innerWidth;
+
+    function center (windowWIdth) {
+      if(windowWidth <= 992&&windowWidth > 768) {
+        myMap.setCenter([41.24452892817815,69.16605567752941]);
+      }
+      if(windowWidth <= 768) {
+        myMap.setCenter([41.24479615429822,69.16872715770823]);
+      }
+      if(windowWidth > 992) {
+        myMap.setCenter([41.24449630624949,69.1649516601672]);
+      }
+    };//end center
+
+      center();
+
+      window.onresize = function () {
+        windowWidth = window.innerWidth;
+        center(windowWidth);
+      };
+  };//end setCenter
+  //инициализация карты
+ymaps.ready(init);
+
+function init() {
+    let myMap = new ymaps.Map("js-map", {
+            center: [41.24449630624949,69.1649516601672],
+            zoom: 17,
+            controls: ['zoomControl', 'typeSelector', 'fullscreenControl', 'trafficControl', 'geolocationControl']
+        }, {
+            searchControlProvider: 'yandex#search'
+        });
+        myMap.geoObjects.add(new ymaps.Placemark([41.24479615429822,69.16872715770823], {
+            balloonContent: 'MediaStore<br>Пн - Сб 9:00 - 17:00',
+            iconCaption: 'Абу Сахий'
+        }, {
+            preset: 'islands#greenDotIconWithCaption',
+            iconColor: '#ed4544'
+        }));
+        setCenter(myMap);
+  }
+
 });

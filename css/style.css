@@ -677,6 +677,8 @@ a:hover {
 }
 .question__map {
   height: 45rem;
+  width: 100%;
+  border: none;
 }
 .question__container {
   position: relative;
