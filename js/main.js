@@ -175,7 +175,7 @@ function init() {
             searchControlProvider: 'yandex#search'
         });
         myMap.geoObjects.add(new ymaps.Placemark([41.24479615429822,69.16872715770823], {
-            balloonContent: 'MediaStore<br>Пн - Сб 9:00 - 17:00',
+            balloonContent: 'MediaStore<br>Пн - Вс 9:00 - 17:00<br>Без выходных',
             iconCaption: 'Абу Сахий'
         }, {
             preset: 'islands#greenDotIconWithCaption',
@@ -183,5 +183,12 @@ function init() {
         }));
         setCenter(myMap);
   }
-
+//отправка форм на сервер
+let forms = document.querySelectorAll("form");
+for(let i=0; i<forms.length; i++) {
+  forms[i].addEventListener("submit", function (event) {
+    event.preventDefault();
+    
+  });//end addEventListener
+}
 });

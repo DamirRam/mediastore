@@ -43,6 +43,8 @@
 @bg-card: #f1f5f9;
 /* рамки */
 @border-input: #b3b3b3;
+/* настройка длительности hover эффекта кнопок и ссылок */
+@hover: 0.5s;
 /* базовые настройки */
 * {
   box-sizing: border-box;
@@ -55,6 +57,7 @@ body {
   top: 0px;
   left: 0px;
   right: 0px;
+  overflow-x: hidden;
 }
 a, button, input, textarea, select {
   outline: none;
@@ -63,20 +66,28 @@ a, button, input, textarea, select {
     outline: none;
   }
 }
+a {
+  transition: all @hover;
+}
 a:hover {
   text-decoration: none;
   cursor: pointer;
+  letter-spacing: 1px;
 }
 /* кнопки */
 .button {
   padding: 1.5rem 3rem;
+  margin-bottom: 0.5rem;
   font-size: 1.6rem;
   color: @text-light;
   background-color: @bg-order-btn;
   border-radius: 2px;
   border-width: 0px;
+  transition: all @hover;
   &:hover{
     background-color: darken(@bg-order-btn, 5%);
+    padding: 1.75rem 5rem;
+    margin-bottom: 0px;
   }
 }
 
@@ -96,7 +107,7 @@ a:hover {
   }
 @media(max-width: 1200px) {
   .container {
-    max-width: 970px;
+    max-width: 960px;
   }
 }
 @media(max-width: 992px) {
@@ -104,7 +115,7 @@ a:hover {
     font-size: 8px;
   }
   .container {
-    max-width: 750px;
+    max-width: 740px;
   }
   .title {
     text-align: center;
@@ -172,7 +183,6 @@ a:hover {
     height: 65px;
   }
   &__phone{
-    margin-right: 3rem;
     color: @text-light;
     &:hover{
       color: darken(@text-light, 10%);
@@ -180,12 +190,17 @@ a:hover {
   }
   &__button {
     padding: 1rem 1.5rem;
+    margin-left: 3rem;
+    margin-bottom: 0px;
     color: @text-light;
     background-color: @bg-call-btn;
     border-radius: 2px;
     border: none;
+    transition: all @hover;
     &:hover{
       background-color: darken(@bg-call-btn, 5%);
+      padding: 1rem 2.5rem;
+      margin: 0px 0px 0px 1rem;
     }
   }
 }
@@ -290,29 +305,25 @@ a:hover {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    margin-top: 5rem;
+    margin: 5rem -1rem 0px -1rem;
   }
   &__text {
     display: inline-block;
     margin-top: 3rem;
     font-size: 1.4rem;
-    line-height: 21px;
+    line-height: 1.5;
     color: @text-features;
   }
 }
 .feature {
+  padding: 0px 1rem;
+  flex-basis: 25%;
   text-align: center;
   &__img-bg {
-    position: relative;
-    width: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 140px;
-    text-align: center;
-  }
-  &__img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
   }
   &_one {
     background-color: #617192;
@@ -327,14 +338,15 @@ a:hover {
     background-color: #5a8596;
   }
 }
-@media(max-width: 992px) {
-  .features {
-    &__wrap {
-      justify-content: center;
-    }
-  }
+@media(max-width: 768px) {
   .feature {
-    margin: 0rem 2rem 4rem 2rem;
+    flex-basis: 100%; 
+    padding: 0px;
+    margin-bottom: 6rem;
+    &__img-bg {
+      width: 250px;
+      margin: auto;
+    }
   }
 }
 /* карточки товаров */
@@ -437,6 +449,12 @@ a:hover {
   &__img {
     width: 3rem;
     height: 3rem;
+    transition: all @hover;
+    &:hover {
+      width: 3.5rem;
+      height: 3.5rem;
+      margin: -0.25rem;
+    }
   }
 }
 
@@ -697,6 +715,7 @@ a:hover {
     display: block;
     margin-top: 1.5rem;
     border-bottom: 1px dashed @text-light;
+    color: @text-light;
     cursor: pointer;
     &:hover{
       color: darken(@text-light, 20%);
@@ -735,7 +754,7 @@ a:hover {
   overflow-x: hidden;
   &__inner {
     width: 100%;
-    max-width: 37rem;
+    max-width: 48rem;
     min-height: auto;
     max-height: 100%;
     padding: 0px 10px;
@@ -760,6 +779,10 @@ a:hover {
     font-size: 1.5rem;
     border: none;
     background-color: transparent;
+    transition: transform @hover;
+    &:hover {
+      transform: rotate(180deg);
+    }
   }
   &__title {
     margin: 0px;
