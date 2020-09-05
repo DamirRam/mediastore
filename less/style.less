@@ -72,22 +72,22 @@ a {
 a:hover {
   text-decoration: none;
   cursor: pointer;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
+  text-shadow: 0px 5px 10px @text-light;
 }
 /* кнопки */
 .button {
   padding: 1.5rem 3rem;
-  margin-bottom: 0.5rem;
   font-size: 1.6rem;
   color: @text-light;
   background-color: @bg-order-btn;
+
   border-radius: 2px;
-  border-width: 0px;
+  border: 1px solid @bg-order-btn;
   transition: all @hover;
   &:hover{
     background-color: darken(@bg-order-btn, 5%);
-    padding: 1.75rem 5rem;
-    margin-bottom: 0px;
+    box-shadow: 5px 5px 20px @bg-call-btn;
   }
 }
 
@@ -183,24 +183,22 @@ a:hover {
     height: 65px;
   }
   &__phone{
+    margin-right: 3rem;
     color: @text-light;
     &:hover{
-      color: darken(@text-light, 10%);
+      color: darken(@text-light, 20%);
     }
   }
   &__button {
     padding: 1rem 1.5rem;
-    margin-left: 3rem;
-    margin-bottom: 0px;
     color: @text-light;
     background-color: @bg-call-btn;
     border-radius: 2px;
-    border: none;
+    border: 1px solid @bg-call-btn;
     transition: all @hover;
     &:hover{
       background-color: darken(@bg-call-btn, 5%);
-      padding: 1rem 2.5rem;
-      margin: 0px 0px 0px 1rem;
+      box-shadow: 0px 5px 20px @bg-call-btn;
     }
   }
 }
