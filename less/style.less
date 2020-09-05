@@ -73,7 +73,6 @@ a:hover {
   text-decoration: none;
   cursor: pointer;
   letter-spacing: 0.5px;
-  text-shadow: 0px 5px 10px @text-light;
 }
 /* кнопки */
 .button {
@@ -183,7 +182,6 @@ a:hover {
     height: 65px;
   }
   &__phone{
-    margin-right: 3rem;
     color: @text-light;
     &:hover{
       color: darken(@text-light, 20%);
@@ -191,6 +189,7 @@ a:hover {
   }
   &__button {
     padding: 1rem 1.5rem;
+    margin-left: 3rem;
     color: @text-light;
     background-color: @bg-call-btn;
     border-radius: 2px;
@@ -777,10 +776,6 @@ a:hover {
     font-size: 1.5rem;
     border: none;
     background-color: transparent;
-    transition: transform @hover;
-    &:hover {
-      transform: rotate(180deg);
-    }
   }
   &__title {
     margin: 0px;

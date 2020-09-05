@@ -59,7 +59,6 @@ a:hover {
   text-decoration: none;
   cursor: pointer;
   letter-spacing: 0.5px;
-  text-shadow: 0px 5px 10px #ffffff;
 }
 /* кнопки */
 .button {
@@ -174,7 +173,6 @@ a:hover {
   height: 65px;
 }
 .header__phone {
-  margin-right: 3rem;
   color: #ffffff;
 }
 .header__phone:hover {
@@ -182,6 +180,7 @@ a:hover {
 }
 .header__button {
   padding: 1rem 1.5rem;
+  margin-left: 3rem;
   color: #ffffff;
   background-color: #5886f5;
   border-radius: 2px;
@@ -838,14 +837,6 @@ a:hover {
   font-size: 1.5rem;
   border: none;
   background-color: transparent;
-  -webkit-transition: -webkit-transform 0.5s;
-  transition: -webkit-transform 0.5s;
-  transition: transform 0.5s;
-  transition: transform 0.5s, -webkit-transform 0.5s;
-}
-.modal__btn:hover {
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
 }
 .modal__title {
   margin: 0px;
