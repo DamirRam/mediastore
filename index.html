@@ -189,13 +189,13 @@
 
     <section class="discount section">
       <div class="container">
-        <div class="main-block discount__block">
+        <div class="main-block discount__block js-modal">
           <h2 class="main-block__title">Получите<span class="main-block__word"> 10%</span> скидки!</h2>
           <!-- /.main-block__title -->
           <h3 class="main-block__subtitle">Только в августе специальные скидки! Оставьте заявку
           до <span class="main-block__word"> 30 августа.</span> Спешите!</h3>
           <!-- /.main-block__subtitle -->
-          <form  class="form discount__form" action="mail.php" method="post">
+          <form  class="form discount__form" action="mailer/mail.php" method="post">
             <input class="form__input" type="text" placeholder="Ваше имя" name="user_name" required>
             <input class="form__input" type="tel" placeholder="Ваш телефон" name="user_phone" required>
             <button class="button form__button">Отправить</button>
@@ -279,12 +279,12 @@
     <section class="question section">
       <div id="js-map" class="question__map"></div>
       <div class="container question__container">
-        <div class="main-block question__block">
+        <div class="main-block question__block js-modal">
           <h2 class="main-block__title">Остались вопросы?</h2>
           <!-- /.main-block__title -->
           <h3 class="main-block__subtitle">Оставьте свою заявку прямо сейчас и наши менеджеры свяжутся с вами в течении <span class="main-block__word"> 20 минут</span></h3>
           <!-- /.main-block__subtitle -->
-          <form  class="form question__form" action="mail.php" method="post">
+          <form  class="form question__form" action="mailer/mail.php" method="post">
             <input class="form__input question__input" type="text" placeholder="Ваше имя" name="user_name" required>
             <input class="form__input question__input" type="tel" placeholder="Ваш телефон" name="user_phone" required>
             <textarea class="form__textarea question__input" cols="20" rows="3" placeholder="Сообщение" name="user_message"></textarea>
@@ -321,12 +321,12 @@
 
   <!-- модальные окна -->
   <!-- заказать звонок -->
-  <div class="modal" data-modal="call">
+  <div class="modal js-modal" data-modal="call">
     <div class="modal__inner">
       <div class="modal__content">
       <input class="modal__btn js-close-modal" type="image" src="img/cross.svg">
       <h2 class="modal__title">Заказать звонок</h2>
-      <form class="form" action="mail.php" method="post">
+      <form class="form" action="mailer/mail.php" method="post">
         <input class="form__input" type="text" placeholder="Ваше имя" name="user_name" required>
         <input class="form__input" type="tel" placeholder="Ваш телефон" name="user_phone" required>
         <button class="button modal__button">Заказать звонок</button>
@@ -339,12 +339,12 @@
   <!-- /.modal -->
 
   <!-- оставить заявку -->
-  <div class="modal" data-modal="request">
+  <div class="modal js-modal" data-modal="request">
     <div class="modal__inner">
       <div class="modal__content">
       <input class="modal__btn js-close-modal" type="image" src="img/cross.svg">
       <h2 class="modal__title">Оставить заявку</h2>
-        <form class="form" action="mail.php" method="post">
+        <form class="form" action="mailer/mail.php" method="post">
           <input class="form__input" type="text" placeholder="Ваше имя" name="user_name" required>
           <input class="form__input" type="tel" placeholder="Ваш телефон" name="user_phone" required>
           <button class="button modal__button">Оставить заявку</button>
@@ -357,12 +357,12 @@
   <!-- /.modal -->
 
   <!-- Заказать -->
-  <div class="modal" data-modal="order">
+  <div class="modal js-modal" data-modal="order">
     <div class="modal__inner">
       <div class="modal__content">
       <input class="modal__btn js-close-modal" type="image" src="img/cross.svg">
       <h2 class="modal__title">Заказать</h2>
-        <form class="form" action="mail.php" method="post">
+        <form class="form" action="mailer/mail.php" method="post">
           <input class="form__input" type="text" placeholder="Ваше имя" name="user_name" required>
           <input class="form__input" type="tel" placeholder="Ваш телефон" name="user_phone" required>
           <button class="button modal__button">Заказать</button>
@@ -375,7 +375,7 @@
   <!-- /.modal -->
 
   <!-- Спасибо -->
-  <div class="modal" data-modal="thanks">
+  <div class="modal js-modal" data-modal="thanks">
     <div class="modal__inner">
       <div class="modal__content">
       <input class="modal__btn js-close-modal" type="image" src="img/cross.svg">
@@ -390,7 +390,7 @@
 
   <!-- Карточки товаров в всплывающих окна-->
   <!--   карточка 1 -->
-  <div class="modal" data-modal="card-1">
+  <div class="modal js-modal" data-modal="card-1">
     <div class="modal__inner modal__inner_size">
       <div class="modal__content">
       <input class="modal__btn js-close-modal" type="image" src="img/cross.svg">
@@ -435,7 +435,7 @@
 
 
   <!--   карточка 2 -->
-  <div class="modal" data-modal="card-2">
+  <div class="modal js-modal" data-modal="card-2">
     <div class="modal__inner modal__inner_size">
       <div class="modal__content modal__content_height">
       <input class="modal__btn js-close-modal" type="image" src="img/cross.svg">
@@ -479,7 +479,7 @@
 
 
   <!--   карточка 3 -->
-  <div class="modal" data-modal="card-3">
+  <div class="modal js-modal" data-modal="card-3">
     <div class="modal__inner modal__inner_size">
       <div class="modal__content modal__content_height">
       <input class="modal__btn js-close-modal" type="image" src="img/cross.svg">
@@ -528,7 +528,7 @@
 
 
   <!--   карточка 4 -->
-  <div class="modal" data-modal="card-4">
+  <div class="modal js-modal" data-modal="card-4">
     <div class="modal__inner modal__inner_size">
       <div class="modal__content modal__content_height">
       <input class="modal__btn js-close-modal" type="image" src="img/cross.svg">

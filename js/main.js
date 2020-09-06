@@ -184,10 +184,48 @@ function init() {
         setCenter(myMap);
   }
 //отправка форм на сервер
+function ajaxPost(params, form) {
+  let request = new XMLHttpRequest ();
+
+  request.onreadystatechange = function () {
+    if(request.readyState == 4 && request.status ==200) {
+    let modal   = document.querySelector(".modal[data-modal='thanks']");
+    modal.classList.add("active");
+    noScroll(modal);
+    form.querySelector("input[name=user_name]").value = "";
+    form.querySelector("input[name=user_phone]").value = "";
+    if (form.classList.contains("question__form") == true) {
+      userMessage = form.querySelector("textarea[name=user_message]").value = "";
+    }
+   }
+  }
+
+  request.open("POST" ,"../mailer/mail.php");
+  request.setRequestHeader("Content-Type" ,"application/x-www-form-urlencoded");
+  request.send(params);
+}//end ajaxPost function
+
 let forms = document.querySelectorAll("form");
 for(let i=0; i<forms.length; i++) {
   forms[i].addEventListener("submit", function (event) {
     event.preventDefault();
+    let form        = event.target;
+    let userName    = form.querySelector("input[name=user_name]").value;
+    let userPhone   = form.querySelector("input[name=user_phone]").value;
+    let userMessage = "";
+
+    if (form.classList.contains("question__form") == true) {
+      userMessage = form.querySelector("textarea[name=user_message]").value;
+    }
+
+    let params = "user_name="+userName+"&"+"user_phone="+userPhone+"&"+"user_message="+userMessage;
+
+    ajaxPost(params, form);
+
+    if(form.closest(".js-modal").hasAttribute("data-modal") == true) {
+    form.closest(".modal").classList.remove("active");
+    scroll(form.closest(".js-modal"));
+    }
   });//end addEventListener
-}
+  }//end for
 });

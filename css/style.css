@@ -309,8 +309,6 @@ a:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   margin: 5rem -1rem 0px -1rem;
 }
 .features__text {
@@ -360,6 +358,10 @@ a:hover {
   .feature__img-bg {
     width: 250px;
     margin: auto;
+  }
+  .features__wrap {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
 }
 /* карточки товаров */
