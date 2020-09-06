@@ -859,6 +859,9 @@ a:hover {
   width: 100%;
   margin-top: 1.5rem;
 }
+.thanks__content {
+  min-height: 19rem;
+}
 .active {
   display: -webkit-box;
   display: -ms-flexbox;

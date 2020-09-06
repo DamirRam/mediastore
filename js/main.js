@@ -213,6 +213,9 @@ for(let i=0; i<forms.length; i++) {
     let userName    = form.querySelector("input[name=user_name]").value;
     let userPhone   = form.querySelector("input[name=user_phone]").value;
     let userMessage = "";
+    if (userPhone == "+998(__)-___-__-__") {
+      return false;
+    }
 
     if (form.classList.contains("question__form") == true) {
       userMessage = form.querySelector("textarea[name=user_message]").value;
@@ -228,4 +231,43 @@ for(let i=0; i<forms.length; i++) {
     }
   });//end addEventListener
   }//end for
+  // маска ввода в input телефона.
+function setCursorPosition(pos, elem) {
+    elem.focus();
+    if (elem.setSelectionRange) elem.setSelectionRange(pos, pos);
+    else if (elem.createTextRange) {
+        var range = elem.createTextRange();
+        range.collapse(true);
+        range.moveEnd("character", pos);
+        range.moveStart("character", pos);
+        range.select()
+    }
+}
+function mask(event) {
+    var matrix = this.defaultValue,
+        i = 0,
+        def = matrix.replace(/\D/g, ""),
+        val = this.value.replace(/\D/g, "");
+        def.length >= val.length && (val = def);
+    matrix = matrix.replace(/[_\d]/g, function(a) {
+        return val.charAt(i++) || "_"
+    });
+    this.value = matrix;
+    i = matrix.lastIndexOf(val.substr(-1));
+    i < matrix.length && matrix != this.defaultValue ? i++ : i = matrix.indexOf("_");
+    setCursorPosition(i, this)
+}
+  let inputs = document.querySelectorAll("input[type=tel]");
+  for(let i=0; i<inputs.length; i++) {
+    inputs[i].addEventListener("focus", function (event) {
+      let input = event.target;
+      input.setAttribute("value","+998(__)-___-__-__");
+    });//end addEventListener
+    inputs[i].addEventListener("blur", function (event) {
+      let input = event.target;
+      input.removeAttribute("value");
+    });//end addEventListener
+    inputs[i].addEventListener("input", mask, false);
+  }//end for
 });
+
