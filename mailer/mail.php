@@ -14,13 +14,13 @@ $mail->isSMTP();                                      // Set mailer to use SMTP
 $mail->Host = 'smtp.mail.ru';  // Specify main and backup SMTP servers
 $mail->SMTPAuth = true;                               // Enable SMTP authentication
 $mail->Username = 'mediastore.uz@mail.ru';                 // Наш логин
-$mail->Password = 'tTtYo$rUOd12axewgvrebdvcwscs';                           // Наш пароль от ящика
+$mail->Password = 'tTtYo$rUOd12axewgvrebdvcwscs13';                           // Наш пароль от ящика
 $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
 $mail->Port = 465;                                    // TCP port to connect to
  
 $mail->setFrom('mediastore.uz@mail.ru', 'mediastore.uz');   // От кого письмо 
 $mail->addAddress('info@mediastore.uz');     // Add a recipient
-//$mail->addAddress('mediastore.uz@yandex.ru');               // Name is optional
+$mail->addAddress('mediastore.uz@yandex.ru');               // Name is optional
 //$mail->addReplyTo('info@example.com', 'Information');
 //$mail->addCC('cc@example.com');
 //$mail->addBCC('bcc@example.com');

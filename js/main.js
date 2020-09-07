@@ -141,48 +141,59 @@ window.addEventListener("load", function() {
 
   //яндекс карты отложенная загрузка и мобильная карта
   //изменение центра карты при именении размера окна
-  function setCenter (myMap) {
-    let windowWidth = window.innerWidth;
+  function yandexMap () {
+  let script = document.createElement("script");
+  script.src = "https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=";
+  script.id = "yandex-map";
+  let firstScript = document.querySelector("script");
+  firstScript.parentNode.insertBefore(script,firstScript);
 
-    function center (windowWIdth) {
-      if(windowWidth <= 992&&windowWidth > 768) {
-        myMap.setCenter([41.24452892817815,69.16605567752941]);
-      }
-      if(windowWidth <= 768) {
-        myMap.setCenter([41.24479615429822,69.16872715770823]);
-      }
-      if(windowWidth > 992) {
-        myMap.setCenter([41.24449630624949,69.1649516601672]);
-      }
-    };//end center
+  script.addEventListener("load", function () {
+        function setCenter (myMap) {
+      let windowWidth = window.innerWidth;
 
-      center();
+      function center (windowWIdth) {
+        if(windowWidth <= 992&&windowWidth > 768) {
+          myMap.setCenter([41.24452892817815,69.16605567752941]);
+        }
+        if(windowWidth <= 768) {
+          myMap.setCenter([41.24479615429822,69.16872715770823]);
+        }
+        if(windowWidth > 992) {
+          myMap.setCenter([41.24449630624949,69.1649516601672]);
+        }
+      };//end center
 
-      window.onresize = function () {
-        windowWidth = window.innerWidth;
-        center(windowWidth);
-      };
-  };//end setCenter
-  //инициализация карты
-ymaps.ready(init);
+        center();
 
-function init() {
-    let myMap = new ymaps.Map("js-map", {
-            center: [41.24449630624949,69.1649516601672],
-            zoom: 17,
-            controls: ['zoomControl', 'typeSelector', 'fullscreenControl', 'trafficControl', 'geolocationControl']
-        }, {
-            searchControlProvider: 'yandex#search'
-        });
-        myMap.geoObjects.add(new ymaps.Placemark([41.24479615429822,69.16872715770823], {
-            balloonContent: 'MediaStore<br>Пн - Вс 9:00 - 17:00<br>Без выходных',
-            iconCaption: 'Абу Сахий'
-        }, {
-            preset: 'islands#greenDotIconWithCaption',
-            iconColor: '#ed4544'
-        }));
-        setCenter(myMap);
-  }
+        window.onresize = function () {
+          windowWidth = window.innerWidth;
+          center(windowWidth);
+        };
+    };//end setCenter
+    //инициализация карты
+  ymaps.ready(init);
+
+  function init() {
+      let myMap = new ymaps.Map("js-map", {
+              center: [41.24449630624949,69.1649516601672],
+              zoom: 17,
+              controls: ['zoomControl', 'typeSelector', 'fullscreenControl', 'trafficControl', 'geolocationControl']
+          }, {
+              searchControlProvider: 'yandex#search'
+          });
+          myMap.geoObjects.add(new ymaps.Placemark([41.24479615429822,69.16872715770823], {
+              balloonContent: 'MediaStore<br>Пн - Вс 9:00 - 17:00<br>Без выходных',
+              iconCaption: 'Абу Сахий'
+          }, {
+              preset: 'islands#greenDotIconWithCaption',
+              iconColor: '#ed4544'
+          }));
+          setCenter(myMap);
+    }
+    });
+  };//end yandexMap
+  setTimeout(yandexMap, 1000);
 //отправка форм на сервер
 function ajaxPost(params, form) {
   let request = new XMLHttpRequest ();
