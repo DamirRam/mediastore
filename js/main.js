@@ -24,7 +24,7 @@ window.addEventListener("load", function() {
   }
   };//end hideSpikmi
 
-  setTimeout(hideSpikmi, 1000);
+  setTimeout(hideSpikmi, 1500);
 
   document.onscroll = function () {
   hideSpikmi();
@@ -193,7 +193,7 @@ window.addEventListener("load", function() {
     }
     });
   };//end yandexMap
-  setTimeout(yandexMap, 1000);
+  setTimeout(yandexMap, 1500);
 //отправка форм на сервер
 function ajaxPost(params, form) {
   let request = new XMLHttpRequest ();
