@@ -140,15 +140,15 @@ window.addEventListener("load", function() {
   slider(".js-slider-4");
 
   //яндекс карты отложенная загрузка и мобильная карта
-  //изменение центра карты при именении размера окна
   function yandexMap () {
-  let script = document.createElement("script");
-  script.src = "https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=";
-  script.id = "yandex-map";
+  let script      = document.createElement("script");
   let firstScript = document.querySelector("script");
+
+  script.src = "https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=";
   firstScript.parentNode.insertBefore(script,firstScript);
 
   script.addEventListener("load", function () {
+  //изменение центра карты при изменении размера окна
         function setCenter (myMap) {
       let windowWidth = window.innerWidth;
 
@@ -193,6 +193,7 @@ window.addEventListener("load", function() {
     }
     });
   };//end yandexMap
+  //тайм аут создания карты
   setTimeout(yandexMap, 1500);
 //отправка форм на сервер
 function ajaxPost(params, form) {
