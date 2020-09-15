@@ -1,1 +1,0 @@
-browser-sync start --port "8080" --server --files "*/**, *.html, *.css, *.js".
