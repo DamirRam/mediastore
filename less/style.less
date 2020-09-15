@@ -808,7 +808,6 @@ a:hover {
 }
 .active {
   display: flex;
-  opacity: 1;
 }
 /* всплывающая карточка товара*/
 .card-wrap {
@@ -911,6 +910,11 @@ a:hover {
   .description {
     padding: 0px;
     flex-basis: 100%;
+  }
+  .thanks {
+    &__content {
+      min-height: 13rem;
+    }
   }
 }
 @media (max-width: 480px) {

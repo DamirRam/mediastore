@@ -67,10 +67,55 @@ window.addEventListener("load", function() {
       spikmi.style.right = "0px";
     }
   };
-
+  //debounce
+function debounce(func, wait, immediate) {
+  let timeout;
+  return function() {
+    let context = this, args = arguments;
+    let later = function() {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
+    };
+    let callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func.apply(context, args);
+  };
+};
   //открытие и закрытие модальных окон
-  let openBtns  = document.querySelectorAll(".js-open-modal");
-  let closeBtns = document.querySelectorAll(".js-close-modal");
+  let openBtns   = document.querySelectorAll(".js-open-modal");
+  let closeBtns  = document.querySelectorAll(".js-close-modal");
+  let closeModal = document.querySelectorAll(".modal");
+  let modalContent = document.querySelectorAll(".modal__content");
+  let modalAnimationTime = 300;
+
+  let animOpen = debounce(function animationOpen(time, modalObj) {
+  let opacity = 0;
+
+  let interval = setInterval (function (){
+    modalObj.classList.add("active");
+    opacity += 0.04;
+    modalObj.style.opacity = opacity;
+    if (opacity >= 1) {
+      clearInterval(interval);
+      modalObj.style.opacity = 1;
+    }
+  }, time/25);//end setInterval
+}, modalAnimationTime);//end debounce
+
+let animClose = debounce(function animationClose (time, modalObj) {
+  let opacity = 1;
+
+  let interval = setInterval (function () {
+    opacity -= 0.04;
+    modalObj.style.opacity = opacity;
+    if (opacity <= 0) {
+      clearInterval(interval);
+      modalObj.style.opacity = 0;
+      modalObj.classList.remove("active");
+    };
+  }, time/25);//end setInterval
+}, modalAnimationTime);//end debounce
 
   function openModal () {
     for(let i=0; i<openBtns.length; i++){
@@ -78,7 +123,7 @@ window.addEventListener("load", function() {
           event.preventDefault();
           let modalId = this.getAttribute("data-modal");
           let modal   = document.querySelector(".modal[data-modal='"+modalId+"']");
-          modal.classList.add("active");
+          animOpen(modalAnimationTime, modal);
           noScroll(modal);
         });//end addEventListener
     };//end for
@@ -89,8 +134,22 @@ window.addEventListener("load", function() {
   for(let i=0; i<closeBtns.length; i++){
     closeBtns[i].addEventListener("click", function (event) {
       let modal = this.closest(".modal");
-      modal.classList.remove("active");
+      animClose(modalAnimationTime, modal);
       scroll(modal);
+    });//end addEventListener
+  };
+
+  for(let i=0; i<closeModal.length; i++){
+    closeModal[i].addEventListener("click", function (event) {
+      let modal = this.closest(".modal");
+      animClose(modalAnimationTime, modal);
+      scroll(modal);
+    }, false);//end addEventListener
+  };
+
+  for(let i=0; i<modalContent.length; i++){
+    modalContent[i].addEventListener("click", function (event) {
+      event.stopPropagation();
     });//end addEventListener
   };
 
@@ -202,7 +261,7 @@ function ajaxPost(params, form) {
   request.onreadystatechange = function () {
     if(request.readyState == 4 && request.status ==200) {
     let modal   = document.querySelector(".modal[data-modal='thanks']");
-    modal.classList.add("active");
+    animOpen(modalAnimationTime, modal);
     noScroll(modal);
     form.querySelector("input[name=user_name]").value = "";
     form.querySelector("input[name=user_phone]").value = "";
@@ -238,7 +297,8 @@ for(let i=0; i<forms.length; i++) {
     ajaxPost(params, form);
 
     if(form.closest(".js-modal").hasAttribute("data-modal") == true) {
-    form.closest(".modal").classList.remove("active");
+    let modal = form.closest(".modal");
+    animClose(modalAnimationTime, modal);
     scroll(form.closest(".js-modal"));
     }
   });//end addEventListener
