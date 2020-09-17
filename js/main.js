@@ -67,29 +67,26 @@ window.addEventListener("load", function() {
       spikmi.style.right = "0px";
     }
   };
-  //debounce
-function debounce(func, wait, immediate) {
-  let timeout;
-  return function() {
-    let context = this, args = arguments;
-    let later = function() {
-      timeout = null;
-      if (!immediate) func.apply(context, args);
+  //throttle
+function throttle(fn, interval) {
+    let lastTime;
+    return function throttled() {
+        let timeSinceLastExecution = Date.now() - lastTime;
+        if(!lastTime || (timeSinceLastExecution >= interval)) {
+            fn.apply(this, arguments);
+            lastTime = Date.now();
+        }
     };
-    let callNow = immediate && !timeout;
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-    if (callNow) func.apply(context, args);
-  };
 };
+
   //открытие и закрытие модальных окон
   let openBtns   = document.querySelectorAll(".js-open-modal");
   let closeBtns  = document.querySelectorAll(".js-close-modal");
   let closeModal = document.querySelectorAll(".modal");
   let modalContent = document.querySelectorAll(".modal__content");
-  let modalAnimationTime = 300;
+  let modalAnimationTime = 250;
 
-  let animOpen = debounce(function animationOpen(time, modalObj) {
+  let animOpen = throttle(function animationOpen(time, modalObj) {
   let opacity = 0;
 
   let interval = setInterval (function (){
@@ -101,9 +98,9 @@ function debounce(func, wait, immediate) {
       modalObj.style.opacity = 1;
     }
   }, time/25);//end setInterval
-}, modalAnimationTime);//end debounce
+}, modalAnimationTime);//end throttle
 
-let animClose = debounce(function animationClose (time, modalObj) {
+let animClose = throttle(function animationClose (time, modalObj) {
   let opacity = 1;
 
   let interval = setInterval (function () {
@@ -115,7 +112,7 @@ let animClose = debounce(function animationClose (time, modalObj) {
       modalObj.classList.remove("active");
     };
   }, time/25);//end setInterval
-}, modalAnimationTime);//end debounce
+}, modalAnimationTime);//end throttle
 
   function openModal () {
     for(let i=0; i<openBtns.length; i++){
