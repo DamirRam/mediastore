@@ -1,0 +1,35 @@
+.header {
+  position: relative;
+  z-index: 5;
+} 
+.main {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  height: 100%;
+  min-height: 350px;
+  display: flex;
+  padding: 90px 0px 25px 0px;
+  justify-content: center;
+  align-items: center;
+}
+.main-block {
+  &__title {
+    margin-bottom: 2rem
+  }
+  &__subtitle {
+    margin-bottom: 2rem;
+  }
+}
+.button {
+  display: inline-block;
+}
+@media(max-width: 768px) {
+.header {
+  &__wrap {
+    justify-content: center;
+  }
+}
+}
