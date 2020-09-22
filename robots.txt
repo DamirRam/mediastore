@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /images/
+Disallow: /js/
+Disallow: /css/
+Disallow: /fonts/
+Disallow: /mailer/
+Disallow: /less/
+Disallow: /404.html
+Disallow: /textolite/
+
+User-agent: Googlebot
+Allow: /
+Disallow: /404.html
+
+User-agent: Yandex
+Allow: /images/
+Disallow: /js/
+Disallow: /css/
+Disallow: /fonts/
+Disallow: /mailer/
+Disallow: /less/
+Disallow: /404.html
+Disallow: /textolite/

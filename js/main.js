@@ -281,7 +281,7 @@ for(let i=0; i<forms.length; i++) {
     let userName    = form.querySelector("input[name=user_name]").value;
     let userPhone   = form.querySelector("input[name=user_phone]").value;
     let userMessage = "";
-    if (userPhone == "+998(__)-___-__-__") {
+    if (userPhone.match("_")) {
       return false;
     }
 
@@ -313,7 +313,8 @@ function setCursorPosition(pos, elem) {
     }
 }
 function mask(event) {
-    var matrix = this.defaultValue,
+    let matrix = this.defaultValue,
+
         i = 0,
         def = matrix.replace(/\D/g, ""),
         val = this.value.replace(/\D/g, "");
@@ -331,12 +332,31 @@ function mask(event) {
     inputs[i].addEventListener("focus", function (event) {
       let input = event.target;
       input.setAttribute("value","+998(__)-___-__-__");
+      setTimeout(function(){
+      input.selectionStart=input.selectionEnd=5;
+    },10);//end setTimeout
     });//end addEventListener
     inputs[i].addEventListener("blur", function (event) {
       let input = event.target;
       input.removeAttribute("value");
     });//end addEventListener
     inputs[i].addEventListener("input", mask, false);
+    inputs[i].addEventListener("click", function (event){
+      let input=event.target;
+      if(input.selectionStart<=4||input.selectionStart==18) {
+        setTimeout(function(){
+        input.selectionStart=input.selectionEnd=5;
+      },0);
+      };//end if
+    });//end addEventListener
+    inputs[i].addEventListener("keydown", function (event){
+      let input=event.target;
+      if(event.keyCode==36) {
+        setTimeout(function(){
+        input.selectionStart=input.selectionEnd=5;
+      },0);
+      };//end if
+    });//end addEventListener
   }//end for
 });
 
